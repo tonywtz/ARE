@@ -1,0 +1,5 @@
+auto
+Exhibits/*.aux
+Exhibits/*.log
+Exhibits/*.fls
+Exhibits/*.fdb_latexmk
