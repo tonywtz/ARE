@@ -262,13 +262,39 @@ Dynamics, capital flows and risk
 \section{Risk-free Interest Rates, Exchange Rates, and Currency
   returns}
 
-Measuring Risk-free interest rates using CIP.
+In order to understand differences in MPK across countires, we must 
+first be able to measure differences in risk-free investment across 
+countries. One may be tempted to calculate the risk-free 
+interest rate using the yield on short-term government debt, which is 
+typically done in for the United States. However, government debt yields 
+often reflect a number of country specific risks (i.e. default risk or
+liquidity risk) and thus cannot be considered risk-free rates. For 
+many countries in the world, it is difficult to find a risk-free asset 
+that we can use to calculate a risk-free rate of return.
 
+Instead, it is common to estimate risk-free rates across countries using
+forward contracts on the currency.\footnote{A forward contract is a rate 
+at which a bank agrees to exchange one currency for another at a
+pre-specified date in the future.} Consider again our fictitious investor 
+and assume that her savings in foreign currencies are truly risk-free. 
+Our investor has two ways of making a risk-free investment in Japanese 
+yen. First, she can simply save at the yen deposit rate. Alternatively, 
+she can convert yen into New Zealand dollars at the spot exchange 
+rate, invest the New Zealand dollars at its deposit rate, and sign a 
+forward contract to exchange her New Zealand dollars for yen at the 
+end of her investment period. Both strategies are risk-free
+since the spot and forward exchange rates are known today. Therefore, 
+the two strategies must yield the same return:
+\begin{equation*}
+    \underbrace{1 + r_{JPY}}_{\text{Yen risk-free rate}}
+    = \underbrace{
+    (1 + r_{NZD}) \times \frac{S}{F}
+    }_{\text{FX implied yen risk-free rate}}
+\end{equation*}
 
+Hassan and Mano facts 
 
-Hassan and Mano facts, Violations of UIP, Fama 84
-
-
+Violations of UIP, Fama 84 (?)
 
 \section{Interest Rate Differentials as Differences in Risk Premia}
 
