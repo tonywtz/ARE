@@ -1,4 +1,65 @@
+\appendix
+
 \begin{center}
   {\Huge\bf Appendix}\\
   {\large\bf -For online publication only-}
 \end{center}
+
+\section{Reduced Form Results \label{Appendix_ReducedFormResults}}
+
+The country $n$ risk-free bond pays off $P^n$ units of the traded good
+at maturity. We derive the value of the risk-free bond, $V^n_P$, by
+applying the asset pricing equation to the bond payoff:
+\begin{equation*}
+  V^n_P = \mathbb{E}\left[\Lambda_{T} P^n
+  \right],
+\end{equation*}
+where $\Lambda_{T}$ denotes the stochastic discount factor. The
+country $n$ risk-free rate (in levels), $R^n$, is the inverse of the
+price of the risk-free bond:
+\begin{equation*}
+  R^n = \frac{1}{V^n_P}.
+\end{equation*}
+Putting the previous two equations together yields the following
+relationship:
+\begin{equation*}
+  \mathbb{E}\left[ \Lambda_{T} P^n \right] R^n = 1.
+\end{equation*}
+As a result, the risk-free rates of countries $f$ and $h$ are related
+as follows:
+\begin{equation*}
+  \mathbb{E}\left[\Lambda_{T} P^f \right] R^f
+  = \mathbb{E}\left[\Lambda_{T} P^h \right] R^h = 1
+\end{equation*} 
+If the stochastic discount factor and prices are log-normal, we can
+perform the following calculations:
+\begin{align*}
+  & \mathbb{E}\left[\Lambda_{T} P^f \right] R^f
+    = \mathbb{E}\left[\Lambda_{T} P^h \right] R^h \\
+  \Leftrightarrow\quad
+  & \mathbb{E}\left[\exp\left[ \lambda_{T} + p^f + r^f \right]\right]
+    = \mathbb{E}\left[\exp\left[\lambda_{T} + p^h + r^h \right]\right] \\
+  \Leftrightarrow\quad
+  & \mathbb{E}\left[\lambda_{T} + p^f\right] + \frac{1}{2}\text{var}\left(\lambda_{T}\right) + 
+    \frac{1}{2}\text{var}\left(p^f\right) + \text{cov}\left(\lambda_{T}, p^f\right) + r^f \\
+  & = 
+    \mathbb{E}\left[\lambda_{T}+ p^h\right] + \frac{1}{2}\text{var}\left(\lambda_{T}\right)+ 
+    \frac{1}{2}\text{var}\left(p^h\right) + \text{cov}\left(\lambda_{T}, p^h\right)+r^h,
+\end{align*}
+We cancel out $\text{var}\left( \lambda_{T} \right)$ from both sides
+of the previous equation.
+\begin{align*}
+  &\mathbb{E}\left[p^f\right]+\frac{1}{2}\text{var}\left(p^f\right) + \text{cov}\left(\lambda_T, p^f\right)+r^f
+    = \mathbb{E}\left[p^h\right]+\frac{1}{2}\text{var}\left(p^h\right)+\text{cov}\left(\lambda_T,p^h\right)+r^h
+  \\      \Leftrightarrow \quad
+  & r^f+\mathbb{E}\left[p^f-p^h\right]+\frac{1}{2}\text{var}\left(p^f\right)-\frac{1}{2}\text{var}\left(p^h\right)-r^h = -\text{cov}\left(\lambda_T,p^f-p^h\right)\\   
+  \Leftrightarrow\quad
+  &r^f+\log\left(\mathbb{E}\left[P^f\right]/\mathbb{E}\left[P^h\right]\right)-r^h = -\text{cov}\left(\lambda_T,p^f-p^h\right)
+\end{align*}
+We define
+$\Delta\mathbb{E}\left[s^{f,h}\right]
+=\log\left(\mathbb{E}\left[P^f\right]/\mathbb{E}\left[P^h\right]\right).$
+With this definition:
+\begin{equation*}
+  r^f+\Delta\mathbb{E}\left[s^{f,h}\right]-r^h = -\text{cov}\left(\lambda_T,p^f-p^h\right).
+\end{equation*}
