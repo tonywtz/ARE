@@ -1,81 +1,36 @@
-%&pdflatex
 
-\documentclass[12pt,letter]{article}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{booktabs, caption, subcaption, float}
-\usepackage[latin1]{inputenc}
-\usepackage{longtable}
-\usepackage{graphics}
-\usepackage{geometry}
-\usepackage{graphicx}
-\usepackage{amsfonts, amssymb, amsmath}
-\usepackage{natbib, multibib}
-\usepackage{theorem}
-\usepackage{setspace}
-\usepackage[normalem]{ulem}
-\usepackage{caption}
-\usepackage{tabularx}
-\usepackage{epstopdf}
-\usepackage{rotating}
-\usepackage{placeins}
-\usepackage[makeroom]{cancel}
-\usepackage{varioref}
-\usepackage{hyperref}
+\documentclass{ar-1col}
 
-\setcounter{MaxMatrixCols}{10}
-% TCIDATA{OutputFilter=Latex.dll} TCIDATA{Version=5.50.0.2960}
-% TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
-% TCIDATA{BibliographyScheme=BibTeX} TCIDATA{LastRevised=Monday, May
-% 11, 2015 19:08:26} TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 
-\theoremstyle{break} \theorembodyfont{\normalfont\itshape}
-\newtheorem{thm}{Theorem}
-\theoremstyle{break}
-\theorembodyfont{\normalfont\itshape}
-\newtheorem{corrollary}{Corollary} \theoremstyle{break}
-\theorembodyfont{\normalfont\itshape} \newtheorem{prop}{Proposition}
-\theoremstyle{break} \theorembodyfont{\normalfont\itshape}
-\newtheorem{lemma}{Lemma} \theoremstyle{break}
-\theorembodyfont{\normalfont\itshape} \newtheorem{algm}{Algorithm}
-\theoremstyle{break} \theorembodyfont{\normalfont\itshape}
-\newtheorem{definition}{Definition} \theoremstyle{break}
-\theorembodyfont{\normalfont\itshape}
-\newtheorem{condition}{Condition} \theoremstyle{break}
-\theorembodyfont{\normalfont\itshape}
+\usepackage[comma]{natbib}
+\usepackage{url}
+\setcounter{secnumdepth}{4}
 
-\renewcommand{\baselinestretch}{1.5}
-\setlength{\hoffset}{-0.4in}
-\setlength{\textwidth}{6.8in}
-\setlength{\textheight}{9.3in}
-\setlength{\topmargin}{-0.5in}
+% Metadata Information
+\jname{Xxxx. Xxx. Xxx. Xxx.}
+\jvol{AA}
+\jyear{2020}
+\doi{10.1146/((please add article doi))}
 
 
 
 \begin{document}
 
-\author{Tarek A. Hassan\thanks{\textbf{Boston University}, NBER, and
-    CEPR; Postal Address: 270 Bay State Road, Boston, MA 02215, USA;
-    E-mail: thassan@bu.edu.} \and
-  Tony Zhang\thanks{\textbf{%
-      Boston University, Questrom School of Business}; Postal Address:
-    595 Commonwealth Avenue, Boston, MA 02215, USA; E-mail:
-    tzhang0@bu.edu.} }
+% Page header
+\markboth{Hassan and Zhang}{The Economics of Currency Risk}
 
-\title{The Economics of Currency Risk Premia\thanks{}}
-
-\date{ \bigskip July 2020}
-
-\maketitle
-
-% +Title
-
-\thispagestyle{empty}
+% Title
+\title{Title: Subtitle}
 
 
-\vspace{-0.7cm}
+%Authors, affiliations address.
+\author{Tarek A. Hassan,$^1$ and Tony Zhang$^2$
+\affil{$^1$Department of Economics, Boston University, Boston, USA,  02213; email: thassan@bu.edu}
+\affil{$^2$Board of Governors of the Federal Reserve System, Washington, USA, 20551; email: tony.zhang@frb.gov}}
 
 
-\setstretch{1.0}
+
+\title{The Economics of Currency Risk\thanks{}}
 
 
 
@@ -95,15 +50,14 @@
 \end{abstract}
 
 
-\bigskip
+%Keywords, etc.
+\begin{keywords}
+keywords, separated by comma, no full stop, lowercase
+\end{keywords}
+\maketitle
 
-\bigskip {\noindent \textbf{JEL classification:} }
-
-{\noindent \textbf{Keywords:} }
-
-\pagebreak
-
-\setstretch{1.4} \setcounter{page}{1}
+%Table of Contents
+%\tableofcontents
 
 
 \section{Introduction}
@@ -111,7 +65,7 @@
 
 A key tenet in economics is that the degree to which firms should be
 willing to invest in a given project depends crucially on the required
-rate of return to capital: a price-taking firm should install just
+rate of return to capital: A price-taking firm should install just
 enough capital so that the marginal product of capital, $MPK_i$, equals
 the required rate of return to capital,$r_i$, 
 \begin{equation}
@@ -123,8 +77,8 @@ pricing are taught that a firm's $r_i$ has two components; a risk-free
 part, $r^f$, and a risk-premium, $RP_i$, that depends on the firm's
 risk characteristics. One of the classic puzzles in asset pricing is
 why $RP_i$ is so large relative to $r^f$ (the equity premium puzzle).
-Monetary economists are interested in the Federal Reserve's power to
-manipulate $r^f$, while students of economic growth often take
+Monetary economists are interested in the Federal Reserve's power to increase or decrease investment by
+manipulating $r^f$, while students of economic growth often take
 differences in $MPK_i$ as a measure of inefficiencies in the
 allocation of capital across countries, sectors, and firms.
 
@@ -184,11 +138,11 @@ data from international bond and derivatives markets. For example, a seminal pap
 shows that currencies with low interest rates on tend to appreciate
 when US consumption growth is low, and depreciate when US consumption
 growth is high. That is, there is direct evidence that currencies with
-low interest rates appreciate when times are ``bad'', making them a
+low interest rates appreciate when times are bad for US consumers, making these currencies a
 safer store of value for investors.
 
 In addition to this empirical evidence, the theoretical work on
-currency risk has identified compelling theoretical reasons to expect
+currency risk has identified a number of theoretical reasons to expect
 the emergence of safe-haven currencies and long-lasting differences in
 interest rates. In a nutshell, currency risk premia arise naturally in
 a wide range of international macro models. For example, \citet{Hassan2013}
@@ -202,6 +156,14 @@ risk premia tend to arise naturally in equilibrium. Other authors have
 similarly pointed to the emergence of currency premia in models with
 intermediary capital constraints, trade costs, and differences in
 resource endowments, among others.
+
+
+We survey the rapidly growing empirical and theoretical literature on
+currency risk premia in detail in sections XX and XX. Because the
+initial focus of this literature was mainly on resolving asset pricing
+anomalies, many of its key papers tend to use technical finance language.
+For this reason we attempted to keep this review as non-technical as
+possible, focusing as much as possible on the underlying economics.
 
 A major difficulty this literature shares with a broader literature in
 asset pricing is that models with conventional preferences tend to
@@ -218,12 +180,6 @@ be small given the relatively small aggregate variation in consumption
 growth we measure in the data. Quantitative research on currency risk
 is thus a major area for future research.
 
-We survey the rapidly growing empirical and theoretical literature on
-currency risk premia in detail in sections XX and XX. Because the
-initial focus of this literature was mainly on resolving asset pricing
-anomalies, many of its key papers tend to use technical finance language.
-For this reason we attempted to keep this review as non-technical as
-possible, focusing as much as possible on the underlying economics.
 
 Although the literature on currency risk premia has proliferated in
 recent years, it has perhaps been less successful at making clear the
@@ -243,7 +199,7 @@ interest rates appear to have higher marginal products of capital in
 the long-run. This simple insight has direct implications for several
 strands of the macroeconomic literature.
 
-The first is for the so-called Lucas-puzzle \citep{Lucas1988}, which
+The first is for the so-called Lucas-puzzle \citep{Lucas1990}, which
 posits that, over long periods of time, capital-to-output ratios do not appear to be equalizing across countries, and in particular, not enough capital appears to be flowing to developing nations to equalize the marginal product of capital. If indeed some currencies are permanently riskier than others, then currency risk is one possible factor preventing such equalization.
 
 A second, related, implication is for a large literature that focuses on assessing the efficiency of the allocation of capital across countries \citep{HallJones1997, CaselliFeyrer2007}. A basic assumption in this literature is that $r^f$ is equalized across countries, so that systematic deviations from this required rates can (partially) be attributed to inefficiencies. However, if there are fundamental (efficient) reasons for $r^f$ to differ due to differing currency (and country) risk characteristics, some of these calculations will have to be modified.
@@ -258,22 +214,17 @@ about central issues in macro.
  4) Exchange rate regimes and risk 5)
 Dynamics, capital flows and risk
 
+FIXMETH CONTINUE ONCE WE KNOW HOW WE END THE PAPER
 
 \section{Risk-free Interest Rates, Exchange Rates, and Currency
   returns}
 
-In order to understand differences in MPK across countires, we must 
-first be able to measure differences in risk-free investment across 
-countries. One may be tempted to calculate the risk-free 
-interest rate using the yield on short-term government debt, which is 
-typically done in for the United States. However, government debt yields 
-often reflect a number of country specific risks (i.e. default risk or
-liquidity risk) and thus cannot be considered risk-free rates. For 
-many countries in the world, it is difficult to find a risk-free asset 
-that we can use to calculate a risk-free rate of return.
+Early work on currency risk by three puzzling empirical facts. The first is that that regressions of changes in the exchange rate between two country's currencies on differences in interest rates an $R^2$ of approximately zero, meaning that interest rate differentials are not strongly related to movements of the exchange rate. The second is that investors seem to be making money on this fact by borrowing in currencies with low interest rates and lending in currencies with high interest rates: If currencies with high interest rates do not systematically depreciate, then investors in this \textit{Carry Trade} strategy can pocket the interest differential. The third puzzling fact is that these carry trades are very easy to implement because interest rate differentials are highly persistent, so that the same countries tend to have high or low interest rates on a very long-term basis.
 
-Instead, it is common to estimate risk-free rates across countries using
-forward contracts on the currency.\footnote{A forward contract is a rate 
+Before we characterize these three facts in more detail, it is worth taking a moment to think about how to measure and compare risk-free interest rates across countries. In the United States we often regard T-Bills as risk-free. However, even if we assume the US government will never default, yields on government debt of many other countries are almost certainly contaminated with the possibility of government default.
+
+For this reason, most of the recent literature follows XX by constructing synthetic risk-free rates using currency
+forward contracts.\footnote{A forward contract is a rate 
 at which a bank agrees to exchange one currency for another at a
 pre-specified date in the future.} Consider again our fictitious investor 
 and assume that her savings in foreign currencies are truly risk-free. 
@@ -292,9 +243,48 @@ the two strategies must yield the same return:
     }_{\text{FX implied yen risk-free rate}}
 \end{equation*}
 
-Hassan and Mano facts 
 
-Violations of UIP, Fama 84 (?)
+
+Consider a version of the carry
+trade in which, at the beginning of each month during an investment period, $t=1,...T$, we form a
+portfolio of all available foreign currencies, $i=1,..N$, weighted by the
+difference of their forward premia ($fp_{it}\equiv f_{it}-s_{it}$) to the
+average forward premium of all currencies at the time ($\overline{fp}_{t}\equiv \sum_{i}%
+\frac{1}{N}fp_{it}$). Under covered interest parity, a currency's forward
+premium is equal to its interest rate differential with the US dollar, so
+that the portfolio is long currencies that have a higher interest rate than
+the average of all currencies at time $t$ and short currencies that have a
+lower than average interest rate. We can write the return on this portfolio
+as
+\begin{equation}
+\textstyle\sum_{i,t}\left[ rx_{i,t+1}\left( fp_{it}-\overline{fp}_{t}\right) \right] ,
+\label{eq_CT}
+\end{equation}%
+where, for convenience, we denote the double-sum over $i$ and $t$ as $%
+\textstyle\sum_{i,t}$:
+
+
+
+$$ $$ both of which describe failures of uncovered interest parity. The first, so-called  was identified by researchers who sought to  
+
+
+conjecture
+
+
+countries differ dramatically in their risk-free interest rates. These
+differences in risk-free interest rates are large (on the same order
+of magnitude as the equity premium puzzle), appear to be highly
+persistent over time (lasting for decades rather than years), and
+cannot be explained by predictable depreciations, government default,
+or differences in inflation rates.
+
+
+
+In order to understand differences in MPK across countires, we must 
+first be able to measure differences in risk-free investment across 
+countries. 
+
+FIXMETH: Hassan and Mano facts, Violations of UIP, Fama 84 (?)
 
 \section{Interest Rate Differentials as Differences in Risk Premia}
 
@@ -319,6 +309,8 @@ the hedging benefits of the Japanese yen and is therefore a riskier
 currency for global investors.
 
 \subsection{Reduced-form Evidence}
+
+FIXEMETZ BEEF UP LRV
 
 In a seminal paper, \citet{LustigVerdelhan2007} provided  the first systematic evidence 
 that low-interest-rate currencies indeed provide a hedge against US consumption growth risk. That is, currencies with low interest rates systematically appreciate when US consumption growth growth is low. 
@@ -367,20 +359,20 @@ currencies provide a hedge against periods of high exchange rate volatility.
 
 \citet{Brunnermeieretal2009} studied eight major currencies. Higher 
 interest rate currencies exhibited greater chance of large devaluations (i.e. crash risk).
+FIXMETZ CAN WE ADD ANY OF THE OTHER EMPIRICAL PAPERS ON CRASH RISK HERE? IF THEY DO, THEY COULD GO INTO THE "EVIDENCE" SUBSECTION BELOW. 
 
-
-Each of these papers highlight different ways in which high interest rate currencies are riskier than low interest rate currencies. However, the 
+Each of these papers highlight different ways in which high interest rate currencies may be riskier than low interest rate currencies. However, the 
 common thread among these papers is that the persistent differences in the 
 returns to investing in different currencies reflect persistent differences in the stochastic properties of their exchange rates. 
-Currencies yielding lower returns are safer currencies that tend to 
+In this interpretation, currencies yielding lower returns are safer currencies that tend to
 appreciate during periods of economic distress. 
 
 \subsection{Theory: Microfoundations of Safe Haven Currencies}
 
-Complementing this empirical evidence, the theoretical literature has identified several fundamental economic forces that may make a given currency safer or riskier from the perspective of global investors. Although there is an ongoing debate on which of these forces may be most important in practice, all of these microfounded models share a common structure, which we can summarize using just a few key equations.
+Prompted by this empirical evidence, the theoretical literature has identified several fundamental economic forces that may make a given currency safer or riskier from the perspective of global investors. Although there is an ongoing debate on which of these forces may be most important in practice, many of of these microfounded models share a common structure, which we can summarize using just a few key equations.
 
 Consider a world economy in which international assets
-are priced by a unique stochastic discount factor, $\lambda_T$, which will be our measure of ``good'' and ``bad'' times. Times are good when $\lambda_T$ is low, and times are bad when it is high. In different models, $\lambda_T$ may be the marginal utility of consumption of traded goods (the part of consumption that his shared internationally), the marginal utility of consumption of some key investor, or the capital constraint of international banks. 
+are priced by the marginal utility of an international investor, $\lambda_T$, which will be our measure of ``good'' and ``bad'' times. Times are good when $\lambda_T$ is low, and times are bad when it is high. In different models, $\lambda_T$ may be the marginal utility of consumption of traded goods (the part of consumption that his shared internationally), the marginal utility of consumption of a key investor who intermediates between segmented international markets, or the capital constraint of such an intermediary. 
 Households consume a country-specific final good, the price of which (accounted for in
 a common unit) depends on $\lambda_T$ and a country-specific shock,
 $x^n$,
@@ -399,13 +391,15 @@ than zero.
 
 The real exchange rate between two countries is the relative price of
 their respective final goods. In logs,
-\begin{equation}
+\begin{equation}\label{eq_RER}
   s^{f,h}=p^{f}-p^{h}=b(x^{f}-x^{h}),
-\end{equation}\label{eq_RER}
+\end{equation}
 where the second equality substitutes (\ref{eq_RF}).
-Because of $x^{n}$, the price of consumption may differ between the two countries, allowing the real exchange rate to move. When the price of consumption in country $f$ increases, its consumption bundle appreciates relative to country $h$. By definition, the risk-free asset in country $h$ pays $p^h$ with certainty, while that in country $f$ pays $p^f$ with certainty. Because the exchange rate may move around, country $h$'s risk-free asset is not risk-free from the perspective of households in country $f$, and vice versa.
+Because of $x^{n}$, the relative price of consumption may differ between the two countries, allowing the real exchange rate to move. When the price of consumption in country $f$ increases, its consumption bundle appreciates relative to country $h$. In this sense, we can speak of ``currencies'' even without formally introducing money into the model. 
 
-Theories of currency risk premia apply
+By definition, the risk-free bond in country $h$ pays $p^h$ with certainty, while that in country $f$ pays $p^f$ with certainty, so that each country's risk-free bond pays exactly one unit of that country's consumption bundle. Importantly, because the real exchange rate may move around, country $h$'s risk-free bond is not risk-free from the perspective of households in country $f$, and vice versa. For this reason, one country's risk-free bond may be more expensive than the other country's risk-free bond. The risk-free rate of interest is the yield to maturity of the risk-free bond, so that the country with the more expensive risk-free bond automatically must have the lower risk-free rate of interest. In this sense, any model with a variable real exchange rate as in equation (\ref{eq_RER}) may produce differences in risk-free interest rates across countries.
+
+Different theories of such differences in interest rates apply
 elementary asset pricing to equation (\ref{eq_RER}). One can show that the log expected return to
 borrowing in country $h$ and to lending in country $f$ is
 \begin{equation}
@@ -417,23 +411,53 @@ where $r^{n}$ is the risk-free interest rate in country $n$.\footnote{$\Delta\ma
   changes. See Appendix \ref{Appendix_ReducedFormResults} for a formal
   derivation.} This statement means a currency that tends to
 appreciate when $\lambda_T$ is high pays a lower expected return and,
-if $\Delta \mathbb{E} s^{f,h}=0$ (as is the case in the data), therefore must has a lower risk-free interest
-rate. That is, a currency that appreciates in bad times (when
+if $\Delta \mathbb{E} s^{f,h}\approx0$ (as is the case in the data), therefore must has a lower risk-free interest
+rate. That is, a currency that appreciates in bad times (for example, in times when
 consumption goods are expensive everywhere) provides a
 hedge against worldwide consumption risk and pays lower returns in
 equilibrium.
 
-Equations \eqref{eq_RF} and \eqref{eq_UIP_RF} are the main ingredients
+Equations (\ref{eq_RF}) and (\ref{eq_UIP_RF}) are the main ingredients
 of risk-based models of unconditional differences in interest rates
 across countries, where different approaches have identified different reasons why the countries differ in the degree to which their price indices covary with $\lambda_T$.
 
-Describe
+\paragraph*{Country Size}
+
+
+
+
+FIXMETH Describe
 \begin{enumerate}
 \item Hassan (2013)[MATH*]
-\item Gabaix and Maggiori (2015)
-\item Ready Roussanov Ward (2017)
+
+\begin{equation} \lambda_{T}^\ast = -c
+  \sum_{n} \theta^n x^n,
+  \label{eqn:lambdat2NP}
+\end{equation}
+larger countries have lower interst rates
+stock returns traded nontraded sector
+Currency Union
+
+\begin{equation}
+  r^{f \ast} + \Delta \mathbb{E} s^{f, h \ast} - r^{h \ast}
+  =g\left(\theta^h - \theta^f\right) \sigma_N^2.
+  \label{eq_FF_UIP}
+\end{equation}
+\item Martin
 \item Richmond (2019)
+
+$$\lambda_{T}^\ast = -c
+  \sum_{n} \theta^n x^n- d\sum_{n} \nu^n x^n$$
+
+
+
+\item Ready Roussanov Ward (2017) (and Maggiori JMP?)
+$$p^{\text{Commodity Country}}=a\lambda_T+b\frac{\text{Finished goods shipped}}{\text{Shipping Capacity}} $$
+Commodity producers appreciate in good times and depreciate in bad times
+Their exchange rates are positively correlated with the commodity price and shipping costs.
 \item Farhi and Gabaix (2016)
+Countries differ in their resilience to disaster risk. Conditional on a disaster striking the world economy, the currencies of more resilient countries appreciate. 
+\item Gourinchas, Govillot and Rey: Differences in country size and risk aversion
 \item Della Corte, Riddiough and Sarno (2016)
 \item Tran (2013)
 \item Powers (2015)
@@ -458,7 +482,9 @@ about central issues in macro.
 There are large differences in capital accumulation across countries:
 
 Hassan, Mertens and Zhang (2016)
-[MATH*]
+\begin{equation}\label{eq_link_k_r}
+  k^{f\ast}-k^{h\ast} = \frac{\gamma}{\tau(\gamma-1)^2}\left(r^{h \ast} - \Delta \mathbb{E} s^{f, h \ast} - r^{f \ast}\right).
+\end{equation}
 Implication 1
 \begin{enumerate}
 \item Lucas (1988)
@@ -477,12 +503,36 @@ Implication 3: corporate balance sheets
 \section{Currency Risk and Exchange Rate Regimes}
 Q: Are there other papers that argue policies can manipulate risk
 premia?
-
+\begin{equation*}
+  p^m = p^{m \ast} + (1 - \theta^m) \zeta (p^{t \ast} - p^{m \ast}).
+\end{equation*}
 \section{Current Accounts and the Reserve Currency Paradox}
  [Puzzle 3: Reserve Currency Paradox]
  [MATH*]
 
 \section{Dynamics}
+
+HABITS -Theory
+Verdelhan (2010)
+Heyerdahl-Larsen (2014)
+Stathopoulos (2012)
+LRR -Theory
+Colacito and Croce (2011,2013)
+Colacito, Croce, Ho and Howard (2018)
+Bansal Shaliastovich (2013)
+DISASTERS - Theory
+Gourio, Siemer, Verdelhan (2013)
+Guo (2010)
+Du (2013)
+Martin (2013)
+Farhi and Gabaix
+DISASTERS - Empirics
+Brunnermeier, Nagel, and Pedersen (2009)
+Burnside et al 2011
+Jurek (2014)
+Farhi et al (2015)
+Also cite Lewis (2011) for peso problems (no risk premia, simply mismeasuring average returns due to small samples)
+
 \subsection{Quantitative literature}
 \begin{enumerate}
 \item Colacito and Croce (2011)
@@ -490,7 +540,9 @@ premia?
 \item Colacito, Croce, Ho and Howard (2018)
 \end{enumerate}
 \subsection{Theories written for FPP}
-Heyerdahl-Larsen Statopoulous Verdelhan Backus Foresi Telmer
+Heyerdahl-Larsen Statopoulous Verdelhan Backus Foresi Telmer 
+Bansal-Shaliastovich
+Gabaix and Maggiori
 \subsection{Measurement of risk}
 Maybe measurement of risk - implied vol - commercial indices -
 newspapers - conference call transcripts
@@ -527,6 +579,55 @@ Capital flows run counter to neo-classical model:
 \item Burnside, Eichenbaum, Kleshchelski and Rebelo (2011)
 \end{enumerate}
 
+
+
+\subsection{Sidebars and Margin Notes}
+% Margin Note
+\begin{marginnote}[]
+\entry{Term A}{definition}
+\entry{Term B}{definition}
+\entry{Term C}{defintion}
+\end{marginnote}
+
+\begin{textbox}[h]\section{SIDEBARS}
+Sidebar text goes here.
+\subsection{Sidebar Second-Level Heading}
+More text goes here.\subsubsection{Sidebar third-level heading}
+Text goes here.\end{textbox}
+
+
+
+\subsection{Equations}
+% Example of a single-line equation
+\begin{equation}
+a = b \ {\rm ((Single\ Equation\ Numbered))}
+\end{equation}
+%Example of multiple-line equation
+Equations can also be multiple lines as shown in Equations 2 and 3.
+\begin{eqnarray}
+c = 0 \ {\rm ((Multiple\  Lines, \ Numbered))}\\
+ac = 0 \ {\rm ((Multiple \ Lines, \ Numbered))}
+\end{eqnarray}
+
+% Summary Points
+\begin{summary}[SUMMARY POINTS]
+\begin{enumerate}
+\item Summary point 1. These should be full sentences.
+\item Summary point 2. These should be full sentences.
+\item Summary point 3. These should be full sentences.
+\item Summary point 4. These should be full sentences.
+\end{enumerate}
+\end{summary}
+
+% Future Issues
+\begin{issues}[FUTURE ISSUES]
+\begin{enumerate}
+\item Future issue 1. These should be full sentences.
+\item Future issue 2. These should be full sentences.
+\item Future issue 3. These should be full sentences.
+\item Future issue 4. These should be full sentences.
+\end{enumerate}
+\end{issues}
 
 \newpage
 
