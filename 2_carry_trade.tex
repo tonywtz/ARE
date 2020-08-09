@@ -1,0 +1,158 @@
+\section{Risk-free Interest Rates, the Carry Trade, and Failures of
+  Uncovered Interest Parity}
+
+Much of the early literature on currency risk focused on understanding three
+puzzling empirical facts in currency markets. The first fact is that
+regressions of changes in the exchange rates on differences in
+interest rates yield a coefficient smaller than one, suggesting that,
+on average, high-interest-rate currencies do not depreciate enough to
+wipe out any differences in interest rates \citep{Bilson1981, Fama1984}.
+The second fact is that investors in the \textit{carry trade} seem to be
+making money on this fact by borrowing in currencies with low interest
+rates and lending in currencies with high interest rates: If
+currencies with high interest rates do not systematically depreciate,
+then investors in the carry trade on average pocket the interest
+differential every period. The third puzzling fact is that these
+interest rate differentials are highly persistent, so that the same
+countries tend to have high or low interest rates on a very long-term
+basis.
+
+Before we characterize these three facts in more detail, it is worth
+taking a moment to think about how to measure and compare risk-free
+interest rates across countries. In the United States we often regard
+T-Bills as risk-free. However, even if we assume the US government
+cannot default, yields on government debt of many other countries are
+almost certainly contaminated with the possibility of government
+default.
+
+For this reason, most of the recent literature follows XX by
+constructing synthetic risk-free rates using currency forward
+contracts and the Covered Interest Parity (CIP).\footnote{A forward
+  contract is a rate at which a bank agrees to exchange one currency
+  for another at a pre-specified date in the future.} To understand
+CIP, consider again our example of Japan and New Zealand, and suppose
+there is a risk-free savings account in each country. A Japanese
+investor with access to both these accounts and to currency forward
+contracts then has two ways of making a risk-free investment in yen.
+First, she can simply save at the yen deposit rate. Alternatively, she
+can convert yen into New Zealand dollars at the spot exchange rate,
+invest the New Zealand dollars at the local savings rate, and sign a
+forward contract to exchange her New Zealand dollars back to yen at the
+end of her investment period. Both strategies are risk-free since the
+spot and forward exchange rates are known today. Therefore, if there
+is no arbitrage, the two strategies must yield the same return:
+\begin{equation}
+  \underbrace{1 + r_{JPY}}_{\text{yen risk-free rate}}
+  = \underbrace{
+    (1 + r_{NZD}) \times \frac{S}{F}
+  }_{\text{Implied yen risk-free rate}}.
+\end{equation}
+Taking logs on both sides of this equation and rearranging shows
+$r_{JPY}-r_{NZD}=s-f$ --- The difference in risk-free interest
+rates must equal the difference between the (log) spot and forward
+exchange rates. This difference is known as the forward premium. As a
+result, we can reliably measure risk-free interest rate differentials
+from forward prices, even if a given government's ability to repay its
+debts may be in question.\footnote{For this reason, commercial providers of the
+carry trade also tend to implement it by buying and selling forward
+contracts, rather than by trading corporate or government bonds.}
+
+Thus, one way to implement a carry trade is to calculate risk-free 
+rates for each country $i$ at the start of each month $t$ during an 
+investment period $t = 1, ..., T$, and then form a portfolio where 
+each currency is weighted by the difference between its risk-free rate 
+and the average risk-free rate of all currencies. The return on this 
+portfolio is:
+\begin{equation}
+  \label{eq_carry}
+  \textstyle\sum_{i}\sum_t\left[ rx_{i,t+1}\left( r^f_{it}-\overline{r}^f_{t}\right) \right] ,
+\end{equation}%
+where, $rx_{i,t+1}=r^f_i-r^f_{USD}+\Delta s$ is the return to 
+borrowing in the home currency and lending in foreign currency $i$ at
+between $t$ and $t+1$.
+
+\citet{HassanMano2015} implement this strategy for 39 currencies between 
+1986 and 2010 and obtain an annualized mean return of 5.45 percent with 
+a Sharpe Ratio of 0.69. For comparison, the Sharpe ratio of the U.S. 
+equity market during the same time period is XX. In this sense, the carry 
+trade is a profitable strategy that demands an explanation: are carry 
+traders being compensated for taking on risk? If so, what kind of 
+risk are they taking?
+
+We get the third fact mentioned above by trying to understand whether we
+obtaining the carry trade returns as a result of re-sorting currencies in 
+our portfolio by their risk-free rates in each month. 
+\citet{HassanMano2015} show that the incremental gain to re-sorting the 
+carry trade portfolio every month is usually not statistically 
+distinguishable from zero. Instead, the authors find that their carry 
+trade strategy would have obtained 70\% of the same returns if they had 
+sorted their portfolio just once at the beginning of their investment 
+period using an initial three years of data, and then never changed their
+portfolio afterwards.
+
+The carry trade return in (\ref{eq_carry}) can be interpreted as the 
+covariance between currency returns at $t+1$ and interest differentials 
+at time $t$. \citet{HassanMano2015} therefore estimated the returns to 
+the carry trade by running a predictive regression of the form:
+\begin{equation}
+  rx_{i,t+1}-\overline{rx}_{t+1}=\beta^{ct}\left(
+    r^f_{it}-\overline{r}^f_{t}\right) +\epsilon
+  _{i,t+1}^{ct}. 
+  \label{eq_ct}
+\end{equation} 
+In the sample of 39 currencies, $\hat{\beta}^{ct}=0.67 (s.e.=0.16)$, 
+implying currencies with high interest rates --- relative to other 
+currencies in the same month --- on average pay significantly higher 
+returns.
+
+
+% where $\beta ^{ct}$ can be interpreted as the elasticity of currency
+% risk premia with respect to interest rate differentials conditional on
+% a time fixed effect. 
+
+
+The results from estimating equation \eqref{eq_ct} also imply that for 
+every dollar carry traders make on interest differentials, 1-0.67=0.33 
+dollars are wiped out by predictable depreciations. In other words,
+high-interest-rate currencies depreciate on average, but not by 
+enough to eliminate the interest differential. We should note that 
+there has been some confusion in the literature on this final point. 
+In many older papers, authors show regressions of exchange rates on 
+interest rate differentials with a country-specific intercept:
+\begin{equation}
+    \Delta s_{i,t+1} 
+    = \alpha_i + \gamma \left(r^f_{i, t} - r^f_{US, t}\right) + \nu_{i, t+1},
+\label{eq_fama} 
+\end{equation}
+and interpret the fact that the slope coefficient $\gamma$ is often 
+negative as evidence that investors expect high-interest-rate 
+currencies to appreciate instead of depreciate. This finding has 
+prompted a considerable theoretical literature trying to rationalize 
+extremely volatile currency risk premia that are negatively correlated 
+with predicted depreciations (the ``Fama conditions''). However, this
+interpretation is incorrect, because a regression with currency fixed
+effects, such as equation \eqref{eq_fama} is not predictive -- investors at
+time $t$ do not know what each currency's fixed effect is. Once one
+corrects for this discrepancy between realized and predicted
+appreciations, one recovers results consistent withe the view that, on
+average, investors expect high-interest-rate currencies to depreciate,
+not appreciate.
+
+To summarize, the carry trade is highly profitable because there are 
+highly persistent differences in risk-free interest rates across 
+currencies that are only partially reversed by predictable 
+depreciations. Currencies with higher interest rates on average pay 
+higher returns to international investors than currencies with lower 
+interest rates. In addition, there is some evidence that expected 
+currency returns move over time with variation in interest rates, 
+so that currencies with unusually high interest rates also pay 
+unusually high returns.\footnote{In addition to the three puzzling
+facts discussed in this section, there are a number of empirical 
+puzzles that we do not have the space to discuss in detail. 
+FIXMETZ LRV 2014, Chinn-Meredith long-term UIP, Verdelhan et al 
+long maturities carry trade works less well. Engel AER, Valchev JMP, 
+Lustig and richmond some currencies appreciate when they have 
+high interest rates}
+
+Taken together, [questions that organize the next sections]
+
