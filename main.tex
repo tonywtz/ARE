@@ -116,9 +116,9 @@ Early work on currency risk began as an attempt to understand three puzzling emp
 
 
 \begin{textbox}[h]\section{Measuring Risk-free Interest Rates and Currency Returns}
-    Before we characterize these three facts in more detail, it is worth taking a moment to think about how to measure and compare returns and risk-free interest rates across currencies. In the United States we often regard T-Bills as risk-free. However, even if we assume the US government cannot default, yields on government debt of many other countries are almost certainly contaminated with the possibility of government default.
+ In the United States we often regard T-Bills as risk-free. However, even if we assume the US government cannot default, yields on government debt of many other countries are almost certainly contaminated with the possibility of government default.
 
-    For this reason, most of the recent literature follows \cite{LustigRoussanovVerdelhan2011} by constructing synthetic risk-free rates using currency forward contracts and the Covered Interest Parity (CIP).\footnote{A forward contract is a rate at which a bank agrees to exchange one currency for another at a pre-specified date in the future.} To understand CIP, consider again our example of Japan and New Zealand, and suppose there is a risk-free savings account in each country. A Japanese investor with access to both these accounts and to currency forward contracts then has two ways of making a risk-free investment in yen. First, she can simply save at the yen deposit rate. Alternatively, she can convert yen into New Zealand dollars at the spot exchange rate, invest the New Zealand dollars at the local savings rate, and sign a forward contract to exchange her New Zealand dollars back to yen at the end of her investment period. Both strategies are risk-free since the spot and forward exchange rates are known today. Therefore, if there is no arbitrage, the two strategies must yield the same return:
+    For this reason, most of the recent literature constructs synthetic risk-free rates using currency forward contracts and the Covered Interest Parity (CIP) \citep{LustigRoussanovVerdelhan2011,DuSchreger2016}.\footnote{A forward contract is a rate at which a bank agrees to exchange one currency for another at a pre-specified date in the future.} To understand CIP, consider again our example of Japan and New Zealand, and suppose there is a risk-free savings account in each country. A Japanese investor with access to both these accounts and to currency forward contracts then has two ways of making a risk-free investment in yen. First, she can simply save at the yen deposit rate. Alternatively, she can convert yen into New Zealand dollars at the spot exchange rate, invest the New Zealand dollars at the local savings rate, and sign a forward contract to exchange her New Zealand dollars back to yen at the end of her investment period. Both strategies are risk-free since the spot and forward exchange rates are known today. Therefore, if there is no arbitrage, the two strategies must yield the same return:
     \begin{equation}
     \underbrace{1 + r_{JPY}}_{\text{yen risk-free rate}}
     = \underbrace{
@@ -224,9 +224,7 @@ The real exchange rate, $S^{f, h}$ between two countries $f$ and $h$ is the rela
 \end{equation}
 where the second equality substitutes Equation \eqref{eq_RF}. Because of $x^{n}$, the relative price of consumption may differ between the two countries, allowing the real exchange rate to move. When the price of consumption in country $f$ increases, its consumption bundle appreciates relative to country $h$. In this sense, we can speak of ``currencies'' even without formally introducing money into the model.
 
-\begin{textbox}[h]
-\section{Currency vs. Country Risk}
-\end{textbox}
+
 By definition, the risk-free bond in country $h$ pays $p^h$ with certainty, while that in country $f$ pays $p^f$ with certainty, so that each country's risk-free bond pays exactly one unit of that country's consumption bundle. Importantly, because the real exchange rate may move around, country $h$'s risk-free bond is not risk-free from the perspective of households in country $f$, and vice versa. For this reason, one country's risk-free bond may be more expensive than the other country's risk-free bond. The risk-free rate of interest is the yield to maturity of the risk-free bond, so that the country with the more expensive risk-free bond automatically must have the lower risk-free rate of interest. In this sense, any model with a variable real exchange rate as in equation (\ref{eq_RER}) may produce differences in risk-free interest rates across countries.
 
 Different theories of such differences in interest rates apply elementary asset pricing to equation (\ref{eq_RER}). One can show that the log expected return to borrowing in country $h$ and to lending in country $f$ is
@@ -237,6 +235,11 @@ Different theories of such differences in interest rates apply elementary asset 
 where $r^{n}$ is the risk-free interest rate in country $n$.\footnote{$\Delta\mathbb{E}s^{f,h}$ is defined as the logarithm of the ratio of the countries' expected real price changes. See Appendix \ref{Appendix_ReducedFormResults} for a formal derivation.} This statement means a currency that tends to appreciate when $\lambda_T$ is high pays a lower expected return and, if $\Delta \mathbb{E} s^{f,h}\approx0$ (as is the case in the data), therefore must has a lower risk-free interest rate. That is, a currency that appreciates in bad times (for example, in times when consumption goods are expensive everywhere) provides a hedge against worldwide consumption risk and pays lower returns in equilibrium.
 
 Equations \eqref{eq_RF} and \eqref{eq_UIP_RF} are the main ingredients of risk-based models of unconditional differences in interest rates across countries, where different approaches have identified different reasons why the countries differ in the degree to which their price indices covary with $\lambda_T$.
+
+\begin{textbox}[h]
+\section{Currency vs. Country Risk}
+Although we follow the literature in referring to the spread in (\ref{eq_UIP_RF}) as stemming from ``currency risk,'' it is important to note that equation (\ref{eq_RER}) to (\ref{eq_UIP_RF}), as well as virtually all models written on the subject, describe the stochastic behavior of the real, not the nominal, exchange rate. Fundamentally, what we mean by ``currency risk'' is therefore the risk that comes from country-specific shocks to a country's consumer price index. Different models may invoke various supply, demand, or monetary shocks for this purpose, but most models we shall discuss below actually do this without even formally introducing money into the model. In this sense, it may actually be more accurate to speak of ``country-specific risk'' or ``country risk.'' 
+\end{textbox}
 
 
 \paragraph*{Spillovers: Country Size and Trade Centrality}
@@ -279,12 +282,7 @@ Powers (2015) derives similar results without appealing to stochastic trade cost
 
 Aside from commodity producing countries, Wiriadinata (2020) points out that countries that have a large amount of outstanding dollar-denominated external debt tend to depreciate whenever the dollar appreciates and have high interest rates and currency returns. She rationalizes this pattern with wealth effect: when the US dollar appreciates, the real value of dollar-denominated debt increases, effectively making countries that borrow in dollars poorer. This negative wealth shock in turn reduces domestic demand, lowering the relative price of domestic non-traded goods, and thus depreciating the currencies of countries that borrow heavily in dollars. If the Us dollar appreciates systematically during international crises (as suggested by the literature above), then these currencies a riskier investment for international investors.
 
-
-\begin{enumerate}
-\item Tran (2013)   
-\item \citet{GourinchasGovillotRey2017} Differences in country size and
-  risk aversion
-\end{enumerate} 
+FIXMETH To and Tran
 
 
 \paragraph*{Portfolio Balance Models FIXMETZ}
@@ -293,9 +291,15 @@ Della Corte, Riddiough and Sarno (2016) and Gabaix and Maggiori Liao-Zhang Malam
 
 
 
+
+
+
  
 \begin{textbox}[h]
-\section{The Reserve Currency Paradox FIXMETH}
+\section{Foreign Asset Portfolios and the Reserve Currency Paradox} While we have focused our discussion on interest differentials and violations of UIP, most models make additional predictions about the returns on other assets (such as stocks in the traded and non-traded sector), the composition of equilibrium portfolios, and the co-movement of consumption across countries. One common prediction that is shared between all approaches in which financial markets are somewhat close to complete is that countries with low interest rates should also also be net-importers of insurance from the rest of the world. This result is easiest to see when we think about spillovers: The reason large or trade-central countries have low interest rates is because shocks that hit these important countries spill over to the rest of the world, so that they are harder and more expensive to insure against. After all, saying that risk-fee interest rates are lower in the United States than in New Zealand is the same as saying that US risk-free bonds are more expensive than those in New Zealand.
+
+This typically means that the same forces that make a given country's currency relatively safe will also tend to make this country a net-importer of insurance from the world market. Although the link between country risk and net foreign asset portfolios has not been systematically studied in the data, this prediction appears at odds with the US data, which is generally seen as having both low interest rate and being a net exporter of insurance to the rest of the world (US investors tend to hold equity abroad while foreign investors largely hold US safe assets, such as T-bills, \citep{GourinchasRey2007,GourinchasGovillotRey2017}). \cite{Maggiori2013} calls this puzzling pattern in the US data the ``reserve currency paradox.'' Aside from resolving this puzzle for the United States, future research should also explore whether or not the same puzzling pattern extends to the portfolio holdings of other low-interest-rate countries. 
+
 \end{textbox}
 
 
@@ -305,49 +309,100 @@ Della Corte, Riddiough and Sarno (2016) and Gabaix and Maggiori Liao-Zhang Malam
 
 \subsection{Reduced-form Evidence}
 
-[Puzzle 1: microfoundation which is it]
+While many of the theoretical papers surveyed above provide detailed evidence on each of the particular channels making a given currency safer or riskier from the perspective of world investors, the literature currently lacks a comprehensive evaluation of their relative importance. As a first step in this direction, Table FIXMETZ shows a set of regressions of currency returns and interest differentials on measures of country size, trade centrality, FIXMETZ, and the share of the country's exports accounted by commodities.
 
-Stepping back, it is useful to note that all of these different theoretical approaches may have some overlap when it comes to the US dollar, which of course is a country with low interest rates and high capital-to-output ratios: The United States is a large economy, that is quite central for world trade and tends to export finished goods.
+FIXMETZ Regressions with country size, trade centrality, commodity, and net investment, brief description.
 
-
-
-FIXMETZ Regressions with country size, trade centrality, commodity, and net investment positions (if available)
-
-
-
-If there is indeed something to this story, it changes how we think about central issues in macro.
-
-
+While these results are suggestive, they are also inadequate. Because interest differentials are highly persistent, all of these regressions rely to some degree on cross-sectional variation for identification, and with fewer than 40 currencies for which we have reliable data, our statistical power for disentangling the effect of multiple variables is highly limited. Moreover, these regressions have no way of accounting for the ease with which each of the candidate mechanisms can account for the numerous auxiliary predictions of each of these models. A key challenge to the literature is thus to develop and compare quantitative models of currency risk.
 
 \subsection{Quantitative Models and the Interest Differential Puzzle}
 
-[Puzzle 2] [MATH] FIXMETH
+Quantitative work on currency risk is perhaps surprisingly under-developed and a major area for future research. Only one or two major papers even attempt to match differences in interest rates as large as those shown in Figure 1, and perhaps even more surprisingly, not a single paper speaks to the correspondingly large differences in capital-to-output ratios between countries we see in the data. There are two major reasons for this lack of progress.
 
-\begin{enumerate}
-\item \citet{ColacitoCroceHoHoward2018}
-\item  Gourinchas Govillot and Rey
-\end{enumerate}
+The first is a little recognized asset pricing puzzle -- we call it the \textit{interest differential puzzle}. The essence of this puzzle is that the surprisingly large currency risk premia pose a fundamentally different challenge to theorists than the equity premium puzzle. To see this challenge, recall that much of the asset pricing theory was developed to reconcile a large equity premium with the fact that aggregate consumption data is relatively smooth. To rationalize a mean excess return of stocks over bonds of 8\% with a standard deviation of 16\%, as we see in US equity markets, Hansen and Jagannathan (1991) show that the stochastic discount factor $m$ must have a standard deviation of at least 0.5, whereas the standard deviation of annual aggregate US consumption growth is an order of magnitude smaller (about 0.03).  
 
+To see how this challenge differs from the interest differential puzzle, we can re-write equation (\ref{eq_UIP_RF}) to read \begin{equation}
+  r^{f} +\mathbb{E} \Delta  s^{f,h} - r^{h} =\frac{1}{2}\left(var(m^f)-var(m^h)\right),
+\end{equation} where $var(m^n)$ denotes the variance of the stochastic discount factor measured in units of the consumption bundle of country $n$.\footnote{This formulation is originally due to 
+\cite{Backusetal2001}. Note however that the traditional reading of this equation, prior to the work by \cite{LustigRoussanovVerdelhan2011} and \cite{HassanMano2015}, has not focused on rationalizing persistent differences in currency returns, but rather the (as we argue over-stated) idea that currencies tend to appreciate when they have unusually high interest rates -- the Fama conditions.} Thus, if we assume that the standard deviation of $m^{Japan}$ is 0.5 (at the Hansen and Jagannathan bound), $m^{New Zealand}$ would have to be 0.4 -- or 20\% lower. That is, to solve the interest differential puzzle, a quantitative model not only has to make the stochastic discount factor much more volatile than aggregate consumption, but also has to amplify differences in the volatility of stochastic discount factors across countries to the point that they are multiple times larger than the standard deviation of aggregate consumption growth. While many modern finance models are equipped to do the former, it is unclear whether they can be re-tooled to also achieve the latter. 
+
+An added difficulty for these models is that the interest differential puzzle is largely about differences in interest rates, and not about predictable changes in exchange rates. That is, to match the data, any quantitative model of currency risk must reflect the fact that the majority of differences in currency returns must come from differences in interest rates. 
+
+The second major challenge to microfounded quantitative models of currency returns is that all of these microfoundations of course rely on introducing substantial heterogeneity in various dimensions (country size, trade centrality, commmodity endowments, and so on). This requirement contrasts with traditional solution methods in finance and macroeconomics, where the former tend to be designed for closed economies, while the latter either target two symmetric countries (Backus Kehoe Kydland), one small country that is measure zero in the world economy (Mendoza). Introducing the kind of granular heterogeneity corresponding to countries, where a finite number of heterogeneous entities make decisions that affect the equilibrium allocation within a dynamic framework that allows solving for risk premia is thus a challenge for which relatively few tools exist. 
+
+\citet{ColacitoCroceHoHoward2018} make an important first step in this direction by equipping a frictionless model with long-run risk and recursive preferences with multiple countries that differ in their exposure a global long-run endowment shock, so that some countries are more affected by global downturns than others. They measure these exposures in the data for 10 advanced economies and argue that they can be thought of as a reduced-form representation of the various fundamental drivers of country heterogeneity surveyed above. They find that a reasonable calibration of their model can replicate large differences in currency returns across countries that align nicely with the returns on high and low interest rate portfolios in \cite{LustigRoussanovVerdelhan2011}.\footnote{ Interestingly, because the model produces a tight link between interest rates and the portfolios held by each country (see our discussion of the reserve currency paradox above), this sorting on interest rates closely corresponds to a sorting of currencies on the country's net foreign asset position as suggested by Della Corte et al. (2016).} 
+In earlier work, Colacito and Croce (2013) had already shown that the combination of long-run risk with recursive preferences also resolves the forward premium puzzle and generates exchange rate disconnect, because shocks to long-run endowments trigger changes in exchange rates that are not tied directly to changes in contemporaneous consumption growth (see our discussion in section XX below). So that the sumtotal of the model in \citet{ColacitoCroceHoHoward2018} uniquely provides a quantitative explanation for both major violations of UIP (the FPP and the carry trade).
+
+One difficulty however the authors were unable to resolve is that the majority the carry trade returns in their model stem from predicted depreciations, whereas interest rate differential account for only about one third of these returns quantitatively. This issue, and tying the reduced-form exposures to global risk to their economic origins, thus remain major areas for future research.
 
 \section{Currency Risk and the Allocation of Capital Across Countries}
 
-FIXMETZ PUT OUR PICTURES SHOWING K/y AND INTERST DIFFERENTIALS HERE \citet{DavidHenriksenSimonovska2014} Hassan, Mertens and Zhang (2016)
-\begin{equation}\label{eq_link_k_r}
-  k^{f\ast}-k^{h\ast} = \frac{\gamma}{\tau(\gamma-1)^2}\left(r^{h \ast} - \Delta \mathbb{E} s^{f, h \ast} - r^{f \ast}\right).
+Equation (\ref{eq_one}) already suggests that firms in countries with safe currencies should accumulate more capital and operate at a lower marginal product of capital. Indeed, solving for differences in capital intensity across countries within models with currency risk yields exactly this result. For example, \citet{HassanMertensZhang2015} find that in a model with nontraded goods and differences in country size,  
+\begin{equation}
+    k^f - k^h = d
+    \left(r^h - \Delta \mathbb{E} s^{f, h} - r^f \right),
 \end{equation}
+where $d$ is a positive constant and $k^n$ denotes capital intensity in country $n$.
+Firms based in countries with safer currencies should thus have a lower cost of capital,
+which increases their value in world markets and prompts them to
+invest more.\footnote{This lower cost of capital generally applies to all firms that produce country-specific goods, but not necessarily to firms that produce a homogeneous traded good.} 
+Using this result, \citet{HassanMertensZhang2015} estimate a dynamic model with endogenous capital accumulation and where countries differ in currency risk and find that variation in currency risk across seven industrialized countries explains about two thirds of the variation in capital to output ratios. However, the magnitude of the differences in capital accumulation fall short of those observed in the data.
 
-It is widely known that there are large and persistent differences in capital accumulation across countries. However, what remains unclear is whether the current allocation of capital is efficient.
+More generally, Figure XX shows relationship between capital accumulation, interest rate differentials and currency 
+excess returns. Figure XX suggests that currency risk premia explain a sizable portion of the cross-country variation in capital accumulation.
 
-\subsection{Currency Risk and the Lucas Puzzle FIXMETZ}
-\begin{enumerate}
-\item Lucas (1988)
-\end{enumerate}
-\subsection{Comparing the Marginal Product of Capital across Countries FIXMETZ}
-\begin{enumerate}
-\item \citet{CaselliFeyrer2007}
-\item \citet{Monge-Naranjo2019}
-\end{enumerate}
+Richers (2020) shows direct evidence of the link between these risk-free interest differentials and the cost of capital at the firm-level: Using data from the primary issuance of 100,000 corporate bonds issued by non-financial firms in 98 countries, he shows that differences in risk-free interest rates, and more generally cross-sectional violations of UIP, pass through almost one-for-one to firms' cost of borrowing. That is, firms borrowing in low-interest-rate currencies have much cheaper access to credit than their counterparts who borrow in high-intrest-rate currencies. These differences in yield to maturity are not reversed by systematic depreciations and cannot be explained by differences in observable characteristics of firms issuing in different currencies. 
+Moreover, this one-for-one pass through from interest rate differentials to borrowing costs even exists within firms who issue in multiple currencies within the same month: The same firm issuing in US dollars and New Zealand dollars in the same month pays a several percentage point higher yield to maturity on the latter bond than the former bond. 
+Consistent with these patterns, Richers (2020) also shows that firms which are headquartered in countries with higher interest rates produce more output per unit of capital installed, suggesting that these firms indeed operate at a higher marginal product of capital. 
+
+FIXMETH
+
+It is widely known that there are large and persistent differences in capital accumulation across countries. In a seminal paper, \citet{Lucas1990} assumed Cobb-Douglas production functions at the country level, and showed that differences in capital accumulation implied large differences in the marginal product of capital (MPK). Given these large differences in MPK, \citet{Lucas1990} pointed out that not enough capital seemed to be flowing towards emerging market countries. This finding is known as the ``Lucas Paradox''. A common interpretation of these data is that there is a large amount of misallocation of capital across countries. 
+
+One potential resolution of the Lucas Paradox could be that MPK is poorly measured. The current allocation of capital across countries may indeed be efficient given the correct measurement of the expected returns to investment. For example, an influential paper by \citet{CaselliFeyrer2007} argued that land and other natural resources are crucial inputs to production in emerging market economies. Thus, the measure of MPK used in \citet{Lucas1990} conflates the returns to capital obtained through investment with the returns to natural resources. The authors augment the Cobb-Douglas production function to include natural resources, and measure the output share of natural resources using data from the World Bank. After accounting for the role of natural resources in production, the marginal product of capital obtained through investment is in fact roughly equal across countries. More recently however, \citet{Monge-Naranjoetal2019} provided a different methodology for estimating the output share of natural resources, and showed the expected return on capital investment still varied dramatically across countries after accounting for natural resources.
+
+Naturally, if some currencies are permanently riskier than others, then currency risk is another factor that can potentially explain the large dispersion in MPK and in capital accumulation. 
+
+Although not specific to currency risk, \citet{DavidHenriksenSimonovska2014} makes a major contribution towards understanding the connection between capital variation and risk. The authors show that although the returns to capital investment are higher in emerging market economies, these returns are also more correlated with the U.S. stock market. This result suggests emerging market economies are more exposed to a common source of risk, which the authors interpret as long-run growth risk. Thus, capital investment in emerging markets should pay higher returns to compensate investors for this risk exposure. The authors go on to calibrate a model where countries are exposed long-run growth risk according to their empirical correlation with the U.S. stock market. Their model is able to quantitatively account for a significant portion of the variation in capital accumulation across countries.
+
+Future work: Connection with currency risk, Ultimate reasons for exposure to common risks
+
+
 \subsection{Currency Risk and Exchange Rate Regimes FIXMETH}
+
+In addition to addressing this long-standing puzzle in the literature, a recent paper by HMZ argues that this tight link between the stochastic properties of a country's real exchange rate and the level of capital accumulation also sheds new light on the costs and benefits of adopting different exchange rate regimes, and on the role of the US dollar as the anchor currency of the world monetary system. 
+
+
+If this risk-based
+view of currency returns has merit, policies that alter the covariance
+between a country's exchange rate and $\lambda_T $
+can alter interest rates, currency returns, and the allocation of
+capital across countries. In particular, a country that adopts a
+policy that systematically increases the price of domestic consumption when $\lambda _{T}$ is high can lower its risk-free
+interest rate relative to all other countries in the world.
+
+As an example, consider a ``manipulating'' country (indexed by $ m $)
+that levies a tax on domestic consumption of traded goods that is
+proportional to the realization of \(\lambda_{T}\), such that
+\begin{equation*}
+  p^{m}=a\lambda _{T}+b x^{m}+\pi \lambda_{T},
+\end{equation*}%
+where \(\pi\) is some positive constant. The taxation scheme increases
+the tendency of \(p^{m}\) to appreciate when \(\lambda_{T}\) is high
+and thus, according to \eqref{eq_UIP_RF}, lowers its interest rate
+relative to all other countries in the world by
+\(\pi \sigma^2_{\lambda_T}\).
+
+If interest rates play a role in allocating capital across countries
+(as is the case in our fully specified model), manipulations of the
+stochastic properties of exchange rates can thus divert capital
+investment to the country that conducts the manipulation, and, more
+broadly, alter the equilibrium allocation of capital across countries.
+The remainder of this paper fleshes out this argument in the context
+of a general equilibrium model and
+applies it to one of the most pervasive policies in international
+financial markets: currency stabilization.
+
 Q: Are there other papers that argue policies can manipulate risk premia?
 \begin{equation*}
   p^m = p^{m \ast} + (1 - \theta^m) \zeta (p^{t \ast} - p^{m \ast}).
@@ -355,14 +410,20 @@ Q: Are there other papers that argue policies can manipulate risk premia?
 
 \section{Currency Risk on Corporate and Sovereign Balance Sheets}
 Original sin literature WHAT ELSE EXISTS?
+
+Need a benchmark model for currency composition of debt
 \begin{enumerate}
 \item \citet{Richers2019}
 \item di Giovanni, Kalemli-Ozcan, Ulu, Baskaya (2019)
-\item Boccola and Lorenzoni
+\item Boccola and Lorenzoni savers demanding FC deposits to insure agains tdepreciation risk
 \item Salomao and Varela
-\item Du and Schreger
+\item Du and Schreger Firms loading up on foreign currency debt to borrow at lower interest rates increases sovereign default risk.
+\item Corlin du schreger portofolio choice model JF
+\item Ottenello and Perez - AEJ Macro
 \end{enumerate} 
 Macroproudential
+
+Balance sheets and exchange rate policy Cespedes Chang Velasco 
 
 
 \section{The Dynamics of Currency Risk}
@@ -370,32 +431,21 @@ Macroproudential
 
 \subsection{Theories of Time Variation in Currency Risk}
 
-Up until this point, we have focused primarily on cross-sectional implications of currency risk premia. A natural extension of this discussion is to understand the effects of currency risk for currency returns dynamics and capital accumulation. As stated in Section XX, much of the early work on currency risk began as an attempt to understand the forward premium puzzle --- The finding that, on average, high-interest-rate currencies do not depreciate enough to wipe out any differences in interest rates. Thus, a large theoretical literature has identified several economic mechanisms that explain this comovement between interest rates and exchange rates.
+Up until this point, we have focused primarily on the cross-sectional implications of currency risk premia. A natural extension of this discussion is to understand the effects of risk premia for currency return dynamics and capital accumulation. As stated in Section XX, much of the early work on currency risk began as an attempt to understand the forward premium puzzle --- The finding that, on average, high-interest-rate currencies do not depreciate enough to wipe out any differences in interest rates. In addition, studies of the dynamics of currency returns have highlighted the disconnect between consumption growth correlations across countries and currency returns \citet{BackusSmith1993}. In response to these empirical facts, a large theoretical literature has identified several economic mechanisms that explain comovement between interest rates and exchange rates in the time series. 
 
-\paragraph{Habits} \citet{Verdelhan2010} proposes an approach in which countries contain a representative investor that exhibits preferences for a ``habit'' level of consumption. When a country experiences low consumption growth, the domestic investor's consumption approaches this habit level, which results in the investor becoming more risk-averse and thus in a low domestic risk-free rate. Moreover, because the domestic investor is more risk-averse, she must also receive a higher expected return for investing abroad. This translates to a UIP coefficient less than one.
+One strategy for explaining the dynamics of currency risk premia involves using more complicated investor preferences from the asset pricing literature that have helped resolve other asset pricing anomalies. \citet{Verdelhan2010} proposed a model in which representative investors of each country exhibit preferences for an exogenously specified ``habit'' level of consumption. As a country's consumption approaches its habit level, the domestic investor becomes much more risk-averse. This increase in risk-aversion generates a low interest rate along with a high currency risk premium required to explain the forward premium puzzle. Building on this intuition, \citet{Heyerdahl-Larsen2011} shows that adding ``deep habits'' -- habits for specific goods within the consumption basket -- allows the model to match the term structure of bond yields as well the dynamics of exchange rates. Moreover, \citet{Stathopoulos2017} shows that one can also rationalize the low volatility of real exchange rates and the disconnect between exchange rates and consumption by adding consumption home bias (in addition to habit preferences). 
 
-\begin{enumerate}
-    \item \citet{Heyerdahl-Larsen2011}
-    \item \citet{Stathopoulos2017}
-\end{enumerate}
+An alternative assumption is to endow investors with Epstein-Zin utility functions and allow for long-run risks. Within these models, the covariance structure of long-term consumption growth shocks strongly impacts exchange rates today. \citet{ColacitoCroce2011} show that a model with highly correlated long-term growth shocks can produce a low correlation in consumption across countries along with a realistic volatility of exchange rates. \citet{BansalShaliastovich2012} and \citet{ColacitoCroce2013} further show that long-run news shocks partnered with a high enough intertemporal elasticity of substitution also produces the comovement of interest rates and currency risk premia required to explain the forward premium puzzle. 
 
-
-
-\paragraph{Long-Run Risks}
-\begin{enumerate}
-    \item \citet{BansalShaliastovich2010}
-    \item \citet{ColacitoCroce2011, ColacitoCroce2013}
-    \item \citet{ColacitoCroceHoHoward2018}
-\end{enumerate}
-
-
-\paragraph{Disaster Risk}
 \begin{enumerate}
     \item \citet{GourioSiemerVerdelhan2013}
     \item \citet{FarhiGabaix2016}
     \item Guo (2010) Du (2013) Martin (2013)
     \item \citet{Backusetal2001}
 \end{enumerate}
+
+Although the theory has provided a number of models to rationalize the comovement between interest rates and exchange rates, it is unclear whether these models can also explain the dynamics of capital accumulation. One paper that makes some progress in this direction is \citet{ColacitoCroceHoHoward2018}. Building on \citet{ColacitoCroce2011, ColacitoCroce2013}, \citet{ColacitoCroceHoHoward2018} endows investors with Epstein-Zin utility and allows for both short-term and long-term shocks to productivity. The authors show that an appropriate calibration of the long-term productivity shock process allows the model to explain
+the response of capital flows to productivity shocks and growth shocks within the G7 countries.
 
 
 \subsection{Measurement of risk FIXMETH}
