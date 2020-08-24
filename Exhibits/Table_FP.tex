@@ -1,0 +1,31 @@
+
+\usepackage{booktabs}
+\usepackage{dcolumn}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{l D{.}{.}{4.3} D{.}{.}{4.4} D{.}{.}{4.5} D{.}{.}{4.5} D{.}{.}{4.3} }
+\toprule
+ & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)} & \multicolumn{1}{c}{(5)} \\
+\midrule
+GDP Share               & -0.68^{*} &            &             & -1.64^{***} & -1.36^{*} \\
+                        & (0.34)    &            &             & (0.46)      & (0.62)    \\
+Centrality              &           & -0.94^{**} &             &             & -0.32     \\
+                        &           & (0.36)     &             &             & (0.39)    \\
+NIIP / GDP              &           &            & -1.27^{***} &             & -1.06^{*} \\
+                        &           &            & (0.36)      &             & (0.42)    \\
+FX Allowed Dev.         &           &            &             & 0.26^{**}   & 0.09      \\
+                        &           &            &             & (0.09)      & (0.12)    \\
+\midrule
+Num. obs.               & 7517      & 7517       & 6177        & 6488        & 5186      \\
+R$^2$ (full model)      & 0.14      & 0.16       & 0.30        & 0.23        & 0.39      \\
+R$^2$ (proj model)      & 0.06      & 0.08       & 0.17        & 0.15        & 0.29      \\
+Adj. R$^2$ (full model) & 0.14      & 0.16       & 0.29        & 0.22        & 0.39      \\
+Adj. R$^2$ (proj model) & 0.05      & 0.07       & 0.17        & 0.14        & 0.28      \\
+\bottomrule
+\multicolumn{6}{l}{\scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$}}
+\end{tabular}
+\caption{Forward premia and characteristics}
+\label{table:fp_char}
+\end{center}
+\end{table}
