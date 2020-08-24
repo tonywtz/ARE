@@ -337,16 +337,20 @@ One difficulty however the authors were unable to resolve is that the majority t
 
 \section{Currency Risk and the Allocation of Capital Across Countries}
 
-Equation (\ref{eq_one}) already suggests that firms in countries with safe currencies should accumulate more capital and operate at a lower marginal product of capital. Indeed, solving for differences in capital intensity across countries within models with currency risk yields exactly this result. For example, \citet{HassanMertensZhang2015} find that in a model with nontraded goods and differences in country size,  
+Equation (\ref{eq_one}) already suggests that firms in countries with high-interest-rate currencies should accumulate less capital and operate at a higher marginal product of capital than those in low-interest-rate countries. Indeed, solving for differences in capital intensity across countries within models of currency risk yields exactly this result. For example, \citet{HassanMertensZhang2015} find that in a model with differences in country size,  
 \begin{equation}
     k^f - k^h = d
     \left(r^h - \Delta \mathbb{E} s^{f, h} - r^f \right),
 \end{equation}
-where $d$ is a positive constant and $k^n$ denotes capital intensity in country $n$.
-Firms based in countries with safer currencies should thus have a lower cost of capital,
-which increases their value in world markets and prompts them to
-invest more.\footnote{This lower cost of capital generally applies to all firms that produce country-specific goods, but not necessarily to firms that produce a homogeneous traded good.} 
-Using this result, \citet{HassanMertensZhang2015} estimate a dynamic model with endogenous capital accumulation and where countries differ in currency risk and find that variation in currency risk across seven industrialized countries explains about two thirds of the variation in capital to output ratios. However, the magnitude of the differences in capital accumulation fall short of those observed in the data.
+where $d$ is a positive constant and $k^n$ denotes capital intensity in country $n$. That is, the class of models surveyed above generally predicts that long-lasting violations of UIP should pass through to capital accumulation, so that currency risk directly affects the allocation of capital across countries and firms.
+
+There are two equivalent ways of thinking about this theoretical result. First, and most obviously, firms based in countries with safer currencies should thus have a lower cost of capital, which increases their value in world markets and prompts them to
+invest more.\footnote{This lower cost of capital generally applies to all firms that produce country-specific goods, but not to firms that produce a homogeneous traded good.} 
+Second, even without appealing to prices, it is efficient to accumulate more capital in countries that are large or in other ways ``systemic,'' because shocks that affect consumption in these countries tend to spill over more and affect allocations all over the world. A social planner thus has a precautionary motive to allocate more capital to the countries that have the largest spillovers.
+
+%Using this result, \citet{HassanMertensZhang2015} estimate a dynamic model with heteogeneous currency risk and endogenous capital accumulation and find that variation in currency risk across seven industrialized countries explains about two thirds of the variation in capital to output ratios between them. However, the magnitude of the differences in capital accumulation fall short of those observed in the data.
+
+Figure \ref{fig:ky_rx} shows this negative relationship between capital accumulation and currency excess returns for our broader sample of XX countries. The slope shown suggests that variation in currency risk premia can account for slightly less than a quarter of the variation in capital-to-output ratios across countries.
 
 \begin{figure}[htp]
     \centering
@@ -354,29 +358,36 @@ Using this result, \citet{HassanMertensZhang2015} estimate a dynamic model with 
     \label{fig:ky_rx}
     \includegraphics[width=0.7\textwidth]{Exhibits/Figure_KY_RX.pdf}
 \end{figure}
-More generally, Figure XX shows relationship between capital accumulation and currency 
-excess returns. Figure XX suggests that currency risk premia explain a sizable portion of the cross-country variation in capital accumulation.
 
-Richers (2020) shows direct evidence of the link between these risk-free interest differentials and the cost of capital at the firm-level: Using data from the primary issuance of 100,000 corporate bonds issued by non-financial firms in 98 countries, he shows that differences in risk-free interest rates, and more generally cross-sectional violations of UIP, pass through almost one-for-one to firms' cost of borrowing. That is, firms borrowing in low-interest-rate currencies have much cheaper access to credit than their counterparts who borrow in high-intrest-rate currencies. These differences in yield to maturity are not reversed by systematic depreciations and cannot be explained by differences in observable characteristics of firms issuing in different currencies. 
-Moreover, this one-for-one pass through from interest rate differentials to borrowing costs even exists within firms who issue in multiple currencies within the same month: The same firm issuing in US dollars and New Zealand dollars in the same month pays a several percentage point higher yield to maturity on the latter bond than the former bond. 
+Pushing beyond the aggregate data, Richers (2020) shows direct evidence of the link between  risk-free interest differentials and the cost of capital at the firm-level: Using data from the primary issuance of 100,000 corporate bonds of non-financial firms in 98 countries, he shows that differences in risk-free interest rates pass through almost one-for-one to firms' cost of borrowing. That is, firms borrowing in low-interest-rate currencies have cheaper access to credit than their counterparts who borrow in high-interest-rate currencies. These differences in bond-level yields cannot be explained with observable characteristics of firms issuing in different currencies, and even exist within firms who issue in multiple currencies within the same month. That is, the same firm issuing in Japanese yen and New Zealand dollars in the same month pays a several percentage point higher yield to maturity on the latter bond than the former bond. 
+
 Consistent with these patterns, Richers (2020) also shows that firms which are headquartered in countries with higher interest rates produce more output per unit of capital installed, suggesting that these firms indeed operate at a higher marginal product of capital. 
 
-FIXMETH
+Further adding evidence in favor of a risk-based interpretation of long-run differences in capital accumulation, \citet{DavidHenriksenSimonovska2014} show that although the returns to capital investment are higher in emerging market economies, these returns are also more correlated with the U.S. stock market. This pattern suggests emerging market economies are more exposed to systematic risk, which the authors interpret as long-run growth risk. Thus, capital investment in emerging markets should pay higher returns to compensate investors for this risk exposure. The authors go on to calibrate a model with recursive utility where countries are exposed long-run growth risk according to their empirical correlation with the U.S. stock market. Their model is able to quantitatively account for a significant portion of the variation in capital accumulation across countries.
 
-It is widely known that there are large and persistent differences in capital accumulation across countries. In a seminal paper, \citet{Lucas1990} assumed Cobb-Douglas production functions at the country level, and showed that differences in capital accumulation implied large differences in the marginal product of capital (MPK). Given these large differences in MPK, \citet{Lucas1990} pointed out that not enough capital seemed to be flowing towards emerging market countries. This finding is known as the ``Lucas Paradox''. A common interpretation of these data is that there is a large amount of misallocation of capital across countries. 
+This link between a country's risk characteristics and capital accumulation poses challenges and opportunities for several ongoing debates in the macroeconomics literature that have yet to be explored systematically and may prove fertile ground for future research. We outline each of these potential applications briefly below.
 
-One potential resolution of the Lucas Paradox could be that MPK is poorly measured. The current allocation of capital across countries may indeed be efficient given the correct measurement of the expected returns to investment. For example, an influential paper by \citet{CaselliFeyrer2007} argued that land and other natural resources are crucial inputs to production in emerging market economies. Thus, the measure of MPK used in \citet{Lucas1990} conflates the returns to capital obtained through investment with the returns to natural resources. The authors augment the Cobb-Douglas production function to include natural resources, and measure the output share of natural resources using data from the World Bank. After accounting for the role of natural resources in production, the marginal product of capital obtained through investment is in fact roughly equal across countries. More recently however, \citet{Monge-Naranjoetal2019} provided a different methodology for estimating the output share of natural resources, and showed the expected return on capital investment still varied dramatically across countries after accounting for natural resources.
+\subsection{The Lucas Paradox}
 
-Naturally, if some currencies are permanently riskier than others, then currency risk is another factor that can potentially explain the large dispersion in MPK and in capital accumulation. 
+The variation in capital-to-output ratios across countries has itself of course been an active topic of research. In a seminal paper, \citet{Lucas1990} argued that large differences in capital accumulation implied large differences in the marginal product of capital (MPK). Given these large differences in MPK, \citet{Lucas1990} pointed out that not enough capital seemed to be flowing towards emerging market countries. This finding is known as the ``Lucas Paradox''.
 
-Although not specific to currency risk, \citet{DavidHenriksenSimonovska2014} makes a major contribution towards understanding the connection between capital variation and risk. The authors show that although the returns to capital investment are higher in emerging market economies, these returns are also more correlated with the U.S. stock market. This result suggests emerging market economies are more exposed to a common source of risk, which the authors interpret as long-run growth risk. Thus, capital investment in emerging markets should pay higher returns to compensate investors for this risk exposure. The authors go on to calibrate a model where countries are exposed long-run growth risk according to their empirical correlation with the U.S. stock market. Their model is able to quantitatively account for a significant portion of the variation in capital accumulation across countries.
+The literature has debated various potential resolutions to the Lucas paradox, including heterogeneity
+in the protection of property rights (Hall and Jones, 1997), taxation rates (Jorgenson,
+1996), depreciation rates, the capital share of output (Karabarbounis and Neiman, 2014),
+and distortions in the allocation of resources (Hsieh and Klenow, 2009). To our knowledge, neither the role of persistent differences in interest rates, nor the role of differences in currency or country risk have been systematically evaluated relative to this literature. In other words, we are yet to learn to what extent differences in risk can account for long-lasting differences in wages and wealth across countries. 
+
+\subsection{Measurement of MPK}
+
+Another potential resolution of the Lucas Paradox that has received considerable attention is that MPK may be poorly measured. The current allocation of capital across countries may indeed be efficient given the correct measurement of the expected returns to investment. For example, an influential paper by \citet{CaselliFeyrer2007} argued that land and other natural resources are crucial inputs to production in emerging market economies. Thus, the measure of MPK used in \citet{Lucas1990} conflates the returns to capital obtained through investment with the returns to natural resources. The authors augment the Cobb-Douglas production function to include natural resources, and measure the output share of natural resources using data from the World Bank. After accounting for the role of natural resources in production, the marginal product of capital obtained through investment is in fact roughly equal across countries. More recently however, \citet{Monge-Naranjoetal2019} provided a different methodology for estimating the output share of natural resources, and showed the expected return on capital investment still varied dramatically across countries after accounting for natural resources.
+
+The common assumption in this literature, however, is that in the absence of these frictions, interest rates and the marginal product of capital should equalize across countries. 
 
 Future work: Connection with currency risk, Ultimate reasons for exposure to common risks
 
 
 \subsection{Currency Risk and Exchange Rate Regimes FIXMETH}
 
-In addition to addressing this long-standing puzzle in the literature, a recent paper by HMZ argues that this tight link between the stochastic properties of a country's real exchange rate and the level of capital accumulation also sheds new light on the costs and benefits of adopting different exchange rate regimes, and on the role of the US dollar as the anchor currency of the world monetary system. 
+In addition to addressing these long-standing puzzle in the literature, a recent paper by HMZ argues that this tight link between the stochastic properties of a country's real exchange rate and the level of capital accumulation also sheds new light on the costs and benefits of adopting different exchange rate regimes, and on the role of the US dollar as the anchor currency of the world monetary system. 
 
 
 If this risk-based
