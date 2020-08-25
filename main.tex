@@ -111,19 +111,11 @@ The remainder of this article is structured as follows FIXMETH
 
 Early work on currency risk began as an attempt to understand three puzzling empirical facts in currency markets. The first, often referred to as the \textit{forward premium puzzle}, is that regressions of changes in the exchange rates on differences in interest rates yield a coefficient smaller than one, suggesting that, on average, high-interest-rate currencies do not depreciate enough to wipe out any differences in interest rates \citep{Bilson1981, Fama1984}. The second is that investors in the \textit{carry trade} appear to be making money by borrowing in currencies with low interest rates and lending in currencies with high interest rates. The third puzzling fact is that differences in interest rates and currency returns are highly persistent, so that the same countries tend to have high or low interest rates on a very long-term basis.
 
+\begin{marginnote}[]
+  \entry{Violation of UIP}{For a given pair of currencies, the expected rate of depreciation is usually not equal to the interest differential, $$E\Delta s^{f,h} \neq r^f_h-r^f_f .$$} \entry{Forward Premium Puzzle}{A form of violation of UIP. Regressions of changes in the exchange rates on differences in interest rates yield a coefficient smaller than one.} 
+  \entry{Carry Trade} {A form of violation of UIP. Profitable trading strategy that involves selling a portfolio of low-interest-rate currencies and buying a portfolio of high-interest-rate currencies.} 
+\end{marginnote}
 
-\begin{textbox}[h]\section{Measuring Risk-free Interest Rates and Currency Returns}
- In the United States we often regard T-Bills as risk-free. However, even if we assume the US government cannot default, yields on government debt of many other countries are almost certainly contaminated with the possibility of government default.
-
-    For this reason, most of the recent literature constructs synthetic risk-free rates using currency forward contracts and the Covered Interest Parity (CIP) \citep{LustigRoussanovVerdelhan2011, DuSchreger2016}.\footnote{A forward contract is a rate at which a bank agrees to exchange one currency for another at a pre-specified date in the future.} To understand CIP, consider again our example of Japan and New Zealand, and suppose there is a risk-free savings account in each country. A Japanese investor with access to both these accounts and to currency forward contracts then has two ways of making a risk-free investment in yen. First, she can simply save at the yen deposit rate. Alternatively, she can convert yen into New Zealand dollars at the spot exchange rate, invest the New Zealand dollars at the local savings rate, and sign a forward contract to exchange her New Zealand dollars back to yen at the end of her investment period. Both strategies are risk-free since the spot and forward exchange rates are known today. Therefore, if there is no arbitrage, the two strategies must yield the same return:
-    \begin{equation}
-    \underbrace{1 + r_{JPY}}_{\text{yen risk-free rate}}
-    = \underbrace{
-        (1 + r_{NZD}) \times \frac{S}{F}
-    }_{\text{Implied yen risk-free rate}}.
-    \end{equation}
-    Taking logs on both sides of this equation and rearranging shows $r_{JPY}-r_{NZD}=s-f$ --- The difference in risk-free interest rates must equal the difference between the (log) spot and forward exchange rates. This difference is known as the forward premium. As a result, we can reliably measure risk-free interest rate differentials from forward prices, even if a given government's ability to repay its debts may be in question.\footnote{For this reason, commercial providers of the carry trade also tend to implement it by buying and selling forward contracts, rather than by trading corporate or government bonds.}.
-\end{textbox}
 
 All three of these facts have in common that they describe different violations of uncovered interest parity (UIP), that is, for a given pair of currencies $h$ and $f$, the expected rate of depreciation is usually not equal to the interest differential, $$E\Delta s \neq r^f_h-r^f_f .$$ An extensive literature has documented these violations of UIP and a number of related trading strategies and related facts. \citet{Hodrick1987}, \citet{FrootThaler1990}, \citet{Engel1996}, \citet{Lewis2011}, and \citet{Engel2014} provide excellent surveys.
 
@@ -139,6 +131,20 @@ where, $rx_{i,t+1}=r^f_i-r^f_{USD}+\Delta s$ is the return to borrowing in the h
 FIXME Implementing this strategy for 39 currencies between 1986 and 2010 yields an annualized mean return of 5.45 percent with a Sharpe Ratio of 0.54. For comparison, the Sharpe ratio of the U.S. equity market during the same time period is 0.42. The carry trade is therefore highly profitable trading strategy that rivals the equity premium and demands an explanation: are carry traders being compensated for taking on risk? If so, what kind of risk are they taking?
 
 We get the third fact mentioned above from decomposing these returns to the carry trade into a static and a dynamic component. Because interest rates do not change much over time, there is not much benefit from re-sorting the carry trade portfolio every month: on average, our carry trader would have still brought home 70\% of the same returns if she had used only three years of data on interest rates at the beginning of the sample to learn which currencies on average have high and low interest rates, sorted her portfolio once, and then never changed it afterwards.
+
+\begin{textbox}[]\section{Measuring Risk-free Interest Rates and Currency Returns}
+ In the United States we often regard T-Bills as risk-free. However, even if we assume the US government cannot default, yields on government debt of many other countries are almost certainly contaminated with the possibility of government default.
+
+    For this reason, most of the recent literature constructs synthetic risk-free rates using currency forward contracts and the Covered Interest Parity (CIP) \citep{LustigRoussanovVerdelhan2011, DuSchreger2016}.\footnote{A forward contract is a rate at which a bank agrees to exchange one currency for another at a pre-specified date in the future.} To understand CIP, consider again our example of Japan and New Zealand, and suppose there is a risk-free savings account in each country. A Japanese investor with access to both these accounts and to currency forward contracts then has two ways of making a risk-free investment in yen. First, she can simply save at the yen deposit rate. Alternatively, she can convert yen into New Zealand dollars at the spot exchange rate, invest the New Zealand dollars at the local savings rate, and sign a forward contract to exchange her New Zealand dollars back to yen at the end of her investment period. Both strategies are risk-free since the spot and forward exchange rates are known today. Therefore, if there is no arbitrage, the two strategies must yield the same return:
+    \begin{equation}
+    \underbrace{1 + r_{JPY}}_{\text{yen risk-free rate}}
+    = \underbrace{
+        (1 + r_{NZD}) \times \frac{S}{F}
+    }_{\text{Implied yen risk-free rate}}.
+    \end{equation}
+    Taking logs on both sides of this equation and rearranging shows $r_{JPY}-r_{NZD}=s-f$ --- The difference in risk-free interest rates must equal the difference between the (log) spot and forward exchange rates. This difference is known as the forward premium. As a result, we can reliably measure risk-free interest rate differentials from forward prices, even if a given government's ability to repay its debts may be in question.\footnote{For this reason, commercial providers of the carry trade also tend to implement it by buying and selling forward contracts, rather than by trading corporate or government bonds.}.
+\end{textbox}
+
 
 In fact, \citet{HassanMano2019} show the incremental gain to re-sorting the carry trade portfolio every month is usually not statistically distinguishable from zero. To see how one could assess which variations in currency returns are statistically different from zero, note the carry trade return in (\ref{eq_carry}) is simply the covariance between currency returns at $t+1$ and interest differentials at time $t$. Thus, we can re-write the return to the carry trade as a predictive regression of the form:
 \begin{equation}
@@ -363,13 +369,13 @@ Equation (\ref{eq_one}) already suggests that firms in countries with high-inter
 \end{equation}
 where $d$ is a positive constant and $k^n$ denotes capital intensity in country $n$. That is, the class of models surveyed above generally predicts that long-lasting violations of UIP should pass through to capital accumulation, so that currency risk directly affects the allocation of capital across countries and firms.
 
-There are two equivalent ways of thinking about this theoretical result. First, and most obviously, firms based in countries with safer currencies should thus have a lower cost of capital, which increases their value in world markets and prompts them to
+There are two equivalent ways of thinking about this theoretical result. First, firms based in countries with safer currencies should have a lower cost of capital, which increases their value in world markets and prompts them to
 invest more.\footnote{This lower cost of capital generally applies to all firms that produce country-specific goods, but not to firms that produce a homogeneous traded good.} 
-Second, even without appealing to prices, it is efficient to accumulate more capital in countries that are large or in other ways ``systemic,'' because shocks that affect consumption in these countries tend to spill over more and affect allocations all over the world. A social planner thus has a precautionary motive to allocate more capital to the countries that have the largest spillovers.
+Second, from a risk-sharing perspective, it is efficient to accumulate more capital in countries that are large or in other ways ``systemic,'' because shocks that affect consumption in these countries tend to spill over more and affect allocations globally. A social planner thus has a precautionary motive to allocate more capital to the countries that have the largest spillovers.
 
 %Using this result, \citet{HassanMertensZhang2015} estimate a dynamic model with heteogeneous currency risk and endogenous capital accumulation and find that variation in currency risk across seven industrialized countries explains about two thirds of the variation in capital to output ratios between them. However, the magnitude of the differences in capital accumulation fall short of those observed in the data.
 
-Figure \ref{fig:ky_rx} shows this negative relationship between capital accumulation and currency excess returns for our broader sample of XX countries. The slope shown suggests that variation in currency risk premia can account for slightly less than a quarter of the variation in capital-to-output ratios across countries.
+Figure \ref{fig:ky_rx} shows this negative relationship between capital accumulation and currency excess returns for our broader sample of 31 countries. The slope shown suggests that variation in currency risk premia can account for slightly less than a quarter of the variation in capital-to-output ratios across countries.
 \begin{figure}[htp]
     \centering
     \caption{Capital intensity and currency excess returns}
@@ -377,7 +383,7 @@ Figure \ref{fig:ky_rx} shows this negative relationship between capital accumula
     \includegraphics[width=0.7\linewidth]{Exhibits/Figure_KY_RX.pdf}
     \begin{minipage}[htp]{\textwidth}
     \scriptsize 
-    \emph{Notes:} This figure shows the relationship between average currency excess returns and average capital-to-output ratios across currency regions. The coefficient is the slope of the line of best fit. The corresponding coefficient on a regression of capital-to-output ratios on interest rate differentials is -0.10.
+    \emph{Notes:} This figure shows the relationship between average currency excess returns and average capital-to-output ratios across currency regions. The sample comprises the same set of 31 currencies from 1988 to 2016 used to produce Table XX. The coefficient is the slope of the line of best fit. The corresponding coefficient on a regression of capital-to-output ratios on interest rate differentials is -0.10.
     \end{minipage}
 \end{figure}
 
@@ -393,10 +399,7 @@ This link between a country's risk characteristics and capital accumulation pose
 
 The variation in capital-to-output ratios across countries has itself of course been an active topic of research. In a seminal paper, \citet{Lucas1990} argued that large differences in capital accumulation implied large differences in the marginal product of capital (MPK). Given these large differences in MPK, \citet{Lucas1990} pointed out that not enough capital seemed to be flowing towards emerging market countries. This finding is known as the ``Lucas Paradox.''
 
-The literature has debated various potential resolutions to the Lucas paradox and the associated lack in convergence in GDP per capita across countries (De Long, ...). These include heterogeneity
-in the protection of property rights (Hall and Jones, 1997), taxation rates (Jorgenson,
-1996), depreciation rates, the capital share of output (Karabarbounis and Neiman, 2014),
-and distortions in the allocation of resources (Hsieh and Klenow, 2009). To our knowledge, neither the role of persistent differences in interest rates, nor the role of differences in currency or country risk have been systematically evaluated relative to this literature. In other words, one possible reason why we see persistent lack of convergence in capital-to-output ratios may simply be persistent differences in currency and country risk. 
+The literature has debated various potential resolutions to the Lucas paradox and the associated lack in convergence in GDP per capita across countries. These include heterogeneity in the protection of property rights \citep{HallJones1997}, taxation rates \citep{Jorgenson1996}, depreciation rates, the capital share of output \citep{Neiman2014}, and distortions in the allocation of resources \citep{HsiehKlenow2009}. To our knowledge, neither the role of persistent differences in interest rates, nor the role of differences in currency or country risk have been systematically evaluated relative to this literature. In other words, one possible reason why we see persistent lack of convergence in capital-to-output ratios may simply be persistent differences in currency and country risk. 
 
 \subsection{Measurement of MPK}
 
@@ -411,8 +414,7 @@ Future work: Connection with currency risk, Ultimate reasons for exposure to com
 
 \subsection{Currency Risk and Exchange Rate Regimes}
 
-In addition to potentially shedding light on these long-standing puzzles in the literature, a recent paper by HMZ argues that the link between the stochastic properties of a country's real exchange rate and the level of capital accumulation also provides a new way of thinking about the costs and benefits of adopting different exchange rate regimes. 
-The authors note that the pervasive practice among small and medium-sized economies to stabilize their exchange rate relative to the US dollar or the euro (Iletzki, Reinhart, and Rogoff) may be thought of as an attempt to make their currencies (and by extension their economies) a safer investment from the perspective of world investors. 
+In addition to potentially shedding light on these long-standing puzzles in the literature, a recent paper by \citet{HassanMertensZhang2020} argues that the link between the stochastic properties of a country's real exchange rate and the level of capital accumulation also provides a new way of thinking about the costs and benefits of adopting different exchange rate regimes. The authors note that the pervasive practice among small and medium-sized economies to stabilize their exchange rate relative to the US dollar or the euro \citep{ilzetzki2018exchange} may be thought of as an attempt to make their currencies (and by extension their economies) a safer investment from the perspective of world investors. 
 
 In their model, countries again differ in size and the domestic prices of traded goods are sticky in terms of the domestic currency, so that each country's central bank has some control of its country's real exchange rate. When a small country stabilizes its exchange rate relative to a larger target country its real exchange rate inherits the stochastic properties of that larger target currency, and thus becomes safer from the perspective of world investors. A safer currency in turns comes with a lower domestic risk-free rate, higher domestic capital accumulation and higher wages. That is, managing a country's exchange rate risk becomes a means of attracting international investment and raising the world-market value of domestic firms. 
 In the absence of policy coordination, small countries then optimally choose to
@@ -426,7 +428,7 @@ Original sin literature WHAT ELSE EXISTS?
 
 Need a benchmark model for currency composition of debt
 \begin{enumerate}
-\item \citet{Richers2019}
+\item \citet{Richers2020}
 \item di Giovanni, Kalemli-Ozcan, Ulu, Baskaya (2019)
 \item Boccola and Lorenzoni savers demanding FC deposits to insure agains tdepreciation risk
 \item Salomao and Varela
@@ -453,10 +455,6 @@ An alternative assumption is to endow investors with Epstein-Zin utility functio
     \item Guo (2010) Du (2013) Martin (2013)
     \item \citet{Backusetal2001}
 \end{enumerate}
-
- 
-
-
 
 In light of our discussion of above, there are at least three avenues for further developing this dynamic literature. First, there is a clear need for synthesis. None of the models that match the cross-section have much to say about dynamics, and vice versa. Given that many of the dynamic models have within them various approaches to rationalize large risk premia, there is also reason to hope that some of these tools may be effective in addressing the (quantitative) interest differential puzzle as we have stated it in section XX above. 
 
