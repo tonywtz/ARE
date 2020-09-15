@@ -1,39 +1,67 @@
+\documentclass[11pt]{article}
+\usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry}
+\usepackage{amsfonts, amssymb, amsmath, amsthm}
+\usepackage{booktabs, caption, subcaption, float}
+\usepackage{graphics, graphicx}
+% \usepackage{newpxtext,newpxmath}
+\usepackage[latin1]{inputenc}
+\usepackage[gen]{eurosym}
+\usepackage{longtable}
+\usepackage{lscape}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{dcolumn}
+\usepackage{multibib}
+\usepackage[normalem]{ulem}
+\usepackage{caption}
+\usepackage{tabularx}
+\usepackage{epstopdf}
+\usepackage{rotating}
+\usepackage{placeins}
+\usepackage[makeroom]{cancel}
+\usepackage{varioref}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
 
-\documentclass{ar-1col}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{prediction}{Prediction}
 
-\usepackage{amsmath, amsfonts}
-\usepackage[comma]{natbib}
-\usepackage{url}
-\setcounter{secnumdepth}{4}
-
-% Metadata Information
-%\jname{Xxxx. Xxx. Xxx. Xxx.}
-%\jvol{AA}
-%\jyear{2020}
-%\doi{10.1146/((please add article doi))}
-
+%\setlength{\textwidth}{6.8in}
+%\setlength{\hoffset}{-0.4in}
+%\setlength{\textheight}{9.3in}
+%\setlength{\topmargin}{-0.5in}
 
 
 \begin{document}
 
-% Page header
-\markboth{Hassan and Zhang}{The Economics of Currency Risk}
+
+\title{The Economics of Currency Risk \thanks{We thank David Lagakos, Thomas Mertens, Jesse Schreger, and Jingye Wang for helpful comments. We thank John Caramichael for excellent research assistance. All mistakes and omissions remain our own. The views in this paper are solely the responsibility of the authors and should not be interpreted as reflecting the views of the Board of Governors of the Federal Reserve System or any other person associated with the Federal Reserve System.}}
 
 % Authors, affiliations address.
-\author{Tarek A. Hassan,$^1$ and Tony Zhang$^2$ \affil{$^1$Department of Economics, Boston University, Boston, USA, 02213; email: thassan@bu.edu} \affil{$^2$Board of Governors of the Federal Reserve System, Washington, USA, 20551; email: tony.zhang@frb.gov}}
+\author{Tarek A. Hassan\thanks{\textbf{Boston University}, NBER, and CEPR; Postal Address: 270 Bay State Road, Boston, MA 02215, USA; E-mail: thassan@bu.edu.} \and Tony Zhang\thanks{\textbf{Board of Governors of the Federal Reserve System}; Postal Address: 20th Street and Constitution Avenue N.W., Washington, DC 20551, USA; E-mail: tony.zhang@frb.gov.}}     
 
 
+\date{September, 2020}
 
-    \title{The Economics of Currency Risk \thanks{We thank David Lagakos, Thomas Mertens, Jesse Schreger, and Jingye Wang for helpful comments. We thank John Caramichael for excellent research assistance. All mistakes and omissions remain our own. The views in this paper are solely the responsibility of the authors and should not be interpreted as reflecting the views of the Board of Governors of the Federal Reserve System or any other person associated with the Federal Reserve System.}}
+\maketitle
 
+\vspace{0.5in}
 
 \input{abstract}
 
+\vspace{2in}
+
+
 % Keywords, etc.
-\begin{keywords}
-  currency risk, country risk, capital flows, uncovered interest parity, carry trade, forward premium puzzle
-\end{keywords}
-\maketitle
+{\noindent \textbf{Keywords:} currency risk, country risk, capital flows, uncovered interest parity, carry trade, forward premium puzzle}
+
+\pagebreak
+
+\setstretch{1.4} \setcounter{page}{1}
+
 
 \section{Introduction}
 
@@ -109,13 +137,16 @@ We begin by reviewing the major stylized facts on the violation of Uncovered Int
 
 Early work on currency risk began as an attempt to understand three puzzling empirical facts in currency markets. The first, often referred to as the \textit{forward premium puzzle}, is that regressions of changes in exchange rates on differences in interest rates yield a coefficient smaller than one. This fact suggests that, on average, high-interest-rate currencies do not depreciate enough to wipe out any differences in interest rates \citep{Bilson1981, Fama1984}. The second is that investors in the \textit{carry trade} make money by borrowing in currencies with low interest rates and lending in currencies with high interest rates. The third puzzling fact is that differences in interest rates and currency returns are highly persistent, so that the same countries tend to have high or low interest rates on a very long-term basis.
 
-\begin{marginnote}[]
-  \entry{Uncovered Interest Parity (UIP)}{A theory that postulates, for a given pair of currencies, the expected rate of depreciation should be equal to the interest differential. UIP is frequently violated in the data.} 
-  \entry{Forward Premium Puzzle}{A violation of UIP. Regressions of changes in the exchange rates on differences in interest rates yield a coefficient smaller than one.} 
-  \entry{Carry Trade} {A violation of UIP. A profitable trading strategy that involves selling a portfolio of low-interest-rate currencies and buying a portfolio of high-interest-rate currencies.} 
-\end{marginnote}
+\begin{tcolorbox}[sharp corners, title = Definitions]
+{\bf Uncovered Interest Parity (UIP):} A theory that postulates, for a given pair of currencies, the expected rate of depreciation should be equal to the interest differential. UIP is frequently violated in the data.
 
-All three of these facts have in common that they describe different violations of UIP; that is, for a given pair of currencies $h$ and $f$, the expected rate of depreciation is usually not equal to the interest differential, $$\mathbb{E}\Delta s \neq r^f_h-r^f_f.$$ An extensive literature has documented these violations of UIP. \citet{Hodrick1987}, \citet{FrootThaler1990}, \citet{Engel1996}, \citet{Lewis2011}, and \citet{Engel2014} provide excellent surveys.\footnote{\cite{Koijen2018Carry} expand the notion of UIP to other asset classes and apply it to equities, bonds, and commodities.}
+\vspace{1em}
+{\bf Forward Premium Puzzle:} A violation of UIP. Regressions of changes in the exchange rates on differences in interest rates yield a coefficient smaller than one.
+
+\vspace{1em}
+{\bf Carry Trade:} A violation of UIP. A profitable trading strategy that involves selling a portfolio of low-interest-rate currencies and buying a portfolio of high-interest-rate currencies. 
+\end{tcolorbox}
+\noindent All three of these facts have in common that they describe different violations of UIP; that is, for a given pair of currencies $h$ and $f$, the expected rate of depreciation is usually not equal to the interest differential, $$\mathbb{E}\Delta s \neq r^f_h-r^f_f.$$ An extensive literature has documented these violations of UIP. \citet{Hodrick1987}, \citet{FrootThaler1990}, \citet{Engel1996}, \citet{Lewis2011}, and \citet{Engel2014} provide excellent surveys.\footnote{\cite{Koijen2018Carry} expand the notion of UIP to other asset classes and apply it to equities, bonds, and commodities.}
 
 One difficulty for students of this literature is that it evolved simultaneously as an attempt to understand exchange rate dynamics (e.g., the forward premium puzzle) and asset pricing anomalies (e.g., the carry trade), and thus often alternates between regression-based and portfolio-methods that are often not directly comparable to each other. We next give a brief overview using the unified approach by \citet{HassanMano2019}. This approach allows us to show the main empirical facts in a form where regressions map one for one into portfolios. However, it also forces us to abstract from many of the details uncovered in the two branches of the literature.
 
@@ -130,10 +161,15 @@ Implementing this strategy using one-month forward rates for 31 currencies betwe
 
 We get the third fact mentioned above from decomposing these returns to the carry trade into a static and a dynamic component. Because interest rates do not change much over time, re-sorting the carry trade portfolio every month yields few benefits: on average, our carry trader would have still brought home 70\% of the same returns if she had used only three years of data on interest rates at the beginning of the sample to learn which currencies usually have high and low interest rates, sorted her portfolio once, and then never changed it afterwards. Most of the returns to the carry trade thus come from the static component.
 
-\begin{textbox}[]\section{Measuring Risk-free Interest Rates and Currency Returns}
-    In the US, we often regard T-Bills as risk free. However, even if we assume the US government cannot default, yields on the government debt of many countries are contaminated with the possibility of government default.
+In fact, \citet{HassanMano2019} show the incremental gain to re-sorting the carry trade portfolio every month is usually not statistically distinguishable from zero. To see how one could assess which variations in currency returns are statistically different from zero, note the carry trade return in equation \ref{eq_carry} is simply the covariance between currency returns at $t+1$ and interest differentials at time $t$. Thus, we can evaluate the expected return to the carry trade using a regression of the following form:
+\begin{equation}
+    rx_{i,t+1} - \overline{rx}_{t+1} 
+    = \beta^{ct}\left( r^f_{it}-\overline{r}^f_{t}\right) +\epsilon_{i,t+1}^{ct},  \label{eq_ct}
+\end{equation} 
+where $\overline{rx}_{t+1}$ denotes the mean return across all foreign currencies at $t+1$. In this regression, we can interpret $\beta^{ct}$ as the elasticity of expected currency returns with respect to interest rate differentials -- a measure of how much of the interest rate differential carry traders can expect to pocket, net of any systematic depreciations. (For this interpretation, it is important that the right-hand-side variable in the regression, like the portfolio weights in equation (\ref{eq_carry}), must be known to investors at time $t$.) In our sample of 31 currencies, we estimate $\hat{\beta}^{ct}=0.57 (s.e.=0.19)$. Hence, within any time period, investing in high-interest-rate currencies yield significantly higher returns than low-interest-rate currencies, although part of the interest rate differential gets wiped out by predictable depreciations of high-interest-rate currencies. Specifically, our estimate implies that for every dollar carry traders make on interest differentials, they lose 1-0.57=0.43 dollars on predictable depreciations. We can thus conclude that high-interest-rate currencies depreciate on average, but not by enough to eliminate the interest differential.
 
-    For this reason, most of the recent literature constructs synthetic risk-free rates using currency forward contracts and applying covered interest parity (CIP) \citep{LustigRoussanovVerdelhan2011, DuSchreger2016}.\footnote{A forward contract is a rate at which a bank agrees to exchange one currency for another at a pre-specified date in the future.} To understand CIP, consider again our example of Japan and New Zealand, and suppose each country has a risk-free savings account denominated in its national currency. A Japanese investor with access to both accounts and to currency forward contracts then has two ways to make a risk-free investment in yen. First, she can simply save at the yen deposit rate. Alternatively, she can convert yen into New Zealand dollars at the spot exchange rate, invest the dollars at the local savings rate, and sign a forward contract to exchange her dollars back to yen at the end of her investment period. Both strategies are risk free because the spot and forward exchange rates are known today. Therefore, if no arbitrage occurs, the two strategies must yield the same return:
+\begin{tcolorbox}[sharp corners, title = Measuring Risk-free Interest Rates and Currency Returns]
+    In the US, we often regard T-Bills as risk free. However, even if we assume the US government cannot default, yields on the government debt of many countries are contaminated with the possibility of government default. For this reason, most of the recent literature constructs synthetic risk-free rates using currency forward contracts and applying covered interest parity (CIP) \citep{LustigRoussanovVerdelhan2011, DuSchreger2016}.\footnote{A forward contract is a rate at which a bank agrees to exchange one currency for another at a pre-specified date in the future.} To understand CIP, consider again our example of Japan and New Zealand, and suppose each country has a risk-free savings account denominated in its national currency. A Japanese investor with access to both accounts and to currency forward contracts then has two ways to make a risk-free investment in yen. First, she can simply save at the yen deposit rate. Alternatively, she can convert yen into New Zealand dollars at the spot exchange rate, invest the dollars at the local savings rate, and sign a forward contract to exchange her dollars back to yen at the end of her investment period. Both strategies are risk free because the spot and forward exchange rates are known today. Therefore, if no arbitrage occurs, the two strategies must yield the same return:
     \begin{equation}
     \underbrace{1 + r^f_{JPY}}_{\text{yen risk-free rate}}
     = \underbrace{
@@ -142,14 +178,7 @@ We get the third fact mentioned above from decomposing these returns to the carr
     \label{eqn:CIP}
     \end{equation}
     where $S$ and $F$ denote the spot and forward exchange rates, respectively. Taking logs on both sides of this equation shows $r_{JPY}-r_{NZD} = s - f$; the difference in risk-free interest rates must equal the difference between the (log) spot and forward exchange rates. This difference is known as the forward premium. As a result, we can reliably measure risk-free interest rate differentials from forward prices, even if a government's ability to repay its debts may be in question.\footnote{Prior to 2007, deviations from CIP have been on average close to zero. However, CIP deviations increased dramatically in magnitude for a number of countries during the Global Financial Crisis. This has led to a resurgence of interest in CIP deviations (see \citet{DuTepperVerdelhan2018}).} For this reason, commercial providers of the carry trade also tend to implement it by buying and selling forward contracts, rather than by trading corporate or government bonds.
-\end{textbox}
-
-In fact, \citet{HassanMano2019} show the incremental gain to re-sorting the carry trade portfolio every month is usually not statistically distinguishable from zero. To see how one could assess which variations in currency returns are statistically different from zero, note the carry trade return in equation \ref{eq_carry} is simply the covariance between currency returns at $t+1$ and interest differentials at time $t$. Thus, we can evaluate the expected return to the carry trade using a regression of the following form:
-\begin{equation}
-    rx_{i,t+1} - \overline{rx}_{t+1} 
-    = \beta^{ct}\left( r^f_{it}-\overline{r}^f_{t}\right) +\epsilon_{i,t+1}^{ct},  \label{eq_ct}
-\end{equation} 
-where $\overline{rx}_{t+1}$ denotes the mean return across all foreign currencies at $t+1$. In this regression, we can interpret $\beta^{ct}$ as the elasticity of expected currency returns with respect to interest rate differentials -- a measure of how much of the interest rate differential carry traders can expect to pocket, net of any systematic depreciations. (For this interpretation, it is important that the right-hand-side variable in the regression, like the portfolio weights in equation (\ref{eq_carry}), must be known to investors at time $t$.) In our sample of 31 currencies, we estimate $\hat{\beta}^{ct}=0.57 (s.e.=0.19)$. Hence, within any time period, investing in high-interest-rate currencies yield significantly higher returns than low-interest-rate currencies, although part of the interest rate differential gets wiped out by predictable depreciations of high-interest-rate currencies. Specifically, our estimate implies that for every dollar carry traders make on interest differentials, they lose 1-0.57=0.43 dollars on predictable depreciations. We can thus conclude that high-interest-rate currencies depreciate on average, but not by enough to eliminate the interest differential.
+\end{tcolorbox}
 
 We should note some confusion in the literature on this point. In many papers, authors show regressions of exchange rates on interest rate differentials with a country-specific intercept:
 \begin{equation}
@@ -214,10 +243,9 @@ Different theories of such differences in interest rates apply elementary asset 
 \end{equation}%
 where $r^f_n$ is the risk-free interest rate in country $n$.\footnote{$\Delta \mathbb{E} s_{f,h}$ is defined as the logarithm of the ratio of the countries' expected real price changes. See Appendix \ref{Appendix_ReducedFormResults} for a formal derivation.} Equation \ref{eq_UIP_RF} shows the currency that tends to appreciate when $m_T$ is high pays a lower expected return. Moreover, if $\Delta \mathbb{E} s_{f,h}$ is not large enough to overturn the interest rate differential (as is the case in the data), this currency also has a lower risk-free interest rate. In other words, a currency that appreciates in bad times (e.g., in times when consumption goods are expensive everywhere) provides a hedge against consumption risk and therefore pays lower returns in equilibrium.
 
-\begin{textbox}[]
-\section{Currency vs.~Country Risk}
+\begin{tcolorbox}[sharp corners, title = Currency vs.~Country Risk]
 Although we follow the literature in referring to the spread in equation \ref{eq_UIP_RF} as stemming from ``currency risk,'' note that equations \ref{eq_RER} and \ref{eq_UIP_RF}, as well as virtually all models written on the subject, describe the stochastic behavior of the real, not the nominal, exchange rate. Fundamentally, what we mean by ``currency risk'' is therefore the risk that comes from country-specific shocks to a country's consumer price index. Different models may invoke various supply, demand, or monetary shocks for this purpose, but most models we discuss below actually do so without formally introducing money into the model. In this sense, speaking of ``country-specific risk'' or ``country risk'' is also accurate. 
-\end{textbox}
+\end{tcolorbox}
 
 Equations \ref{eq_RF} and \ref{eq_UIP_RF} are the main ingredients of risk-based models of differences in interest rates across countries. Different approaches identify various reasons why countries differ in the degree to which their price indices covary with $m_T$.
 
@@ -330,13 +358,13 @@ An added difficulty for these models is that, empirically, the majority of diffe
 
 The second major challenge to microfounded quantitative models of currency returns is that all of these microfoundations of course rely on introducing substantial heterogeneity in various dimensions (country size, trade centrality, commodity endowments, etc.). This requirement contrasts with traditional solution methods in finance and macroeconomics, where the former tend to be designed for closed economies, whereas the latter either target two symmetric countries or one small country that is measure zero in the world economy. Introducing a large, but finite, number of heterogeneous agents that make decisions affecting the equilibrium allocation within a dynamic framework while solving for risk premia is thus a challenge for which relatively few tools exist. 
 
-\begin{textbox}[h]
-\section{Foreign Asset Portfolios and the Reserve Currency Paradox} While we have focused our discussion on models' implications for interest differentials and violations of UIP, most models make additional predictions about the returns on other assets, the composition of equilibrium portfolios, and the co-movement of consumption across countries. One common prediction in models where households share risk across countries is that countries with low interest rates should also be net importers of insurance from the rest of the world. 
+\begin{tcolorbox}[sharp corners, title = Foreign Asset Portfolios and the Reserve Currency Paradox]
+While we have focused our discussion on models' implications for interest differentials and violations of UIP, most models make additional predictions about the returns on other assets, the composition of equilibrium portfolios, and the co-movement of consumption across countries. One common prediction in models where households share risk across countries is that countries with low interest rates should also be net importers of insurance from the rest of the world. 
 
-This result is easiest to see in equation \ref{eq_BFT}: countries with lower interest rates have more volatile marginal utility, so they should need and want relatively more insurance. That is, the same forces that make a given country's currency relatively safe will also tend to make this country a net importer of insurance from the world market. 
+\quad This result is easiest to see in equation \ref{eq_BFT}: countries with lower interest rates have more volatile marginal utility, so they should need and want relatively more insurance. That is, the same forces that make a given country's currency relatively safe will also tend to make this country a net importer of insurance from the world market. 
 
-Although the link between country risk and net foreign asset portfolios has not been systematically studied in the data, this prediction appears at odds with the US data, which is generally seen as having both a low interest rate and being a net exporter of insurance to the rest of the world (US investors tend to hold equity abroad, whereas foreign investors largely hold US safe assets, such as T-Bills \citep{GourinchasRey2007,GourinchasGovillotRey2017}). \cite{Maggiori2013} calls this puzzling pattern in the US data the ``reserve currency paradox.'' Aside from resolving this puzzle for the US, future research should also explore whether the same puzzling pattern extends to the portfolio holdings of other low-interest-rate countries. 
-\end{textbox}
+\quad Although the link between country risk and net foreign asset portfolios has not been systematically studied in the data, this prediction appears at odds with the US data, which is generally seen as having both a low interest rate and being a net exporter of insurance to the rest of the world (US investors tend to hold equity abroad, whereas foreign investors largely hold US safe assets, such as T-Bills \citep{GourinchasRey2007,GourinchasGovillotRey2017}). \cite{Maggiori2013} calls this puzzling pattern in the US data the ``reserve currency paradox.'' Aside from resolving this puzzle for the US, future research should also explore whether the same puzzling pattern extends to the portfolio holdings of other low-interest-rate countries. 
+\end{tcolorbox}
 
 \citet{ColacitoCroceGavazzoniReady2018} make an important first step in this direction by adding multiple countries that differ in their exposure to a global long-run endowment shock to a quantitative model with long-run risk and recursive preferences. They measure these different exposures in the data for the G7 economies and argue these exposures can be thought of as a reduced-form representation of the various fundamental drivers of country risk surveyed above, which all ultimately suggest some countries are more affected by global downturns than others. \citet{ColacitoCroceGavazzoniReady2018} then show a reasonable calibration of their model can replicate large differences in currency returns across countries that align nicely with the returns on high and low-interest-rate portfolios in \cite{LustigRoussanovVerdelhan2011}.\footnote{ Interestingly, because the model produces a tight link between interest rates and the portfolios held by each country (see our discussion of the reserve currency paradox above), this sorting on interest rates closely corresponds to a sorting of currencies on the country's net foreign asset position as suggested by \citet{DellaCorteetal2016}.} 
 An added benefit of their framework is that the combination of long-run risk with recursive preferences also resolves the forward premium puzzle and matches a number of other facts about the dynamics of exchange rates and interest rates, as the authors show in their earlier work \citep{ColacitoCroce2011}. 
@@ -391,13 +419,14 @@ In addition to potentially shedding light on these long-standing puzzles about t
 
 In their model, countries again differ in size, and the domestic prices of traded goods are sticky in terms of the domestic currency, so that each country's central bank has some control of its country's real exchange rate. When a small country stabilizes its exchange rate relative to a larger target country, its real exchange rate inherits the stochastic properties of that larger target currency and thus becomes safer from the perspective of world investors. A safer currency in turns comes with a lower domestic risk-free rate, higher domestic capital accumulation, and higher wages.\footnote{For evidence of the first result see column 4 of Table \ref{table:rx_char}.}  That is, managing a country's exchange rate risk becomes a means of attracting international investment and raising the world-market value of domestic firms. In the absence of policy coordination, small countries then optimally choose to stabilize their exchange rates relative to the currency of the largest economy in the world, which endogenously emerges as the world's anchor currency. Larger economies instead optimally choose to float their exchange rates, because currency interventions by larger countries are endogenously more expensive to maintain than those by smaller countries. The model therefore predicts an equilibrium pattern of exchange rate arrangements that fits the data, where almost all stabilizations target the same anchor currency (the USD), small countries below a certain size stabilize, intermediate-sized countries maintain weaker stabilizations, and only the largest economies in the world float their currencies. 
 
-\section{Currency Risk, Macroprudential Regulation, and Monetary Policy \label{sec_balancesheets}}
+\section{Currency Risk, Macroprudential Regulation, and \\ 
+Monetary Policy \label{sec_balancesheets}}
 
 Beyond its consequences for the allocation of capital across countries, the study of currency risk also potentially poses questions relating to monetary policy, macroprudential regulation, and the sustainability of current account deficits.
 
-First, a large literature on the ``currency mismatch'' highlights that borrowing in foreign currencies exposes the borrower to the risk of default in an event of an appreciation of the foreign currency \citep[e.g]{EichengreenHausmann1999,cespedes2004balance}. Indeed, although the propensity of governments to issue debt in a foreign currency has decreased over time, firms often choose to issue debt in low-interest-rate currencies -- particularly those firms that are based in emerging markets \citep{DuSchreger2017}. Our discussion of currency risk adds an important wrinkle to this debate: all currency mismatch is not created equal. Instead, if currencies such as the dollar and the euro have low interest rates because they appreciate in times of economic distress, firms that borrow in these currencies are effectively selling insurance against that distress, because the real value of their liabilities increases in those states of the world. In other words, borrowing in low-interest-rate currencies is not a free lunch, but instead exposes the borrower to systematic risk. This link between borrowing in low-interest-rate currencies and systematic risk may provide a rationale for regulatory intervention that limits the amount of foreign-denominated debt certain firms can issue.
+First, a large literature on the ``currency mismatch'' highlights that borrowing in foreign currencies exposes the borrower to the risk of default in an event of an appreciation of the foreign currency \citep[e.g]{EichengreenHausmann1999,cespedes2004balance}. Indeed, although the propensity of governments to issue debt in a foreign currency has decreased over time, firms often choose to issue debt in low-interest-rate currencies -- particularly those firms that are based in emerging markets \citep{DuSchreger2016}. Our discussion of currency risk adds an important wrinkle to this debate: all currency mismatch is not created equal. Instead, if currencies such as the dollar and the euro have low interest rates because they appreciate in times of economic distress, firms that borrow in these currencies are effectively selling insurance against that distress, because the real value of their liabilities increases in those states of the world. In other words, borrowing in low-interest-rate currencies is not a free lunch, but instead exposes the borrower to systematic risk. This link between borrowing in low-interest-rate currencies and systematic risk may provide a rationale for regulatory intervention that limits the amount of foreign-denominated debt certain firms can issue.
 
-Recent evidence by \citet{liao2020}, \citet{Richers2020}, and \citet{SalomaoVarela2019} shows that denominating part of their debt in low-interest-rate currencies allows firms to lower their overall cost of capital, invest more, and lower their mean return on assets. Moreover, \citep{KalemliOzcanetal2019} shows firms can be further exposed to currency risk through foreign currency loans from domestic banks, and that the availability of such loans within Turkey varies over time with global shocks to international credit markets.\footnote{A related literature has highlighted the consequences of the currency denomination of corporate debt for the risk of sovereign default \citep{DuSchreger2017, OttonelloPerez2019}.} In this sense, we have a growing body of evidence that shows the upside of issuing debt in low-interest-rate currencies: a lower cost of capital. 
+Recent evidence by \citet{liao2020}, \citet{Richers2020}, and \citet{SalomaoVarela2019} shows that denominating part of their debt in low-interest-rate currencies allows firms to lower their overall cost of capital, invest more, and lower their mean return on assets. Moreover, \citep{KalemliOzcanetal2019} shows firms can be further exposed to currency risk through foreign currency loans from domestic banks, and that the availability of such loans within Turkey varies over time with global shocks to international credit markets.\footnote{A related literature has highlighted the consequences of the currency denomination of corporate debt for the risk of sovereign default \citep{DuSchreger2016, OttonelloPerez2019}.} In this sense, we have a growing body of evidence that shows the upside of issuing debt in low-interest-rate currencies: a lower cost of capital. 
 
 By contrast, very little is known about which firms, households, and governments can and should take on the downside -- the systematic risk. A number of recent papers suggest interesting interactions between currency risk, exchange rate policy, and regulation. \citet{Bocola2019} study one such example, where savers prefer to denominate deposits in dollars rather than the domestic currency, because they expect the dollar to retain value and appreciate during recessions. Domestic issuers meet this demand by denominating their debt in dollars, creating a currency mismatch. Interestingly, the authors show ex-post bailouts to borrowers can be an attractive policy alleviating the country's susceptibility to crises. \citet{SalomaoVarela2019} develop a structural model of the currency denomination of debt. In their model, productive firms with a high marginal product of capital optimally take on currency risk. Moreover, the authors also highlight interesting interactions between the local government's choice of exchange rate regime and the allocation of currency exposure across firms. \cite{keller2019capital} studies foreign currency borrowing by corporations in Peru and shows capital controls meant to reduce such foreign currency exposure may actually end up increasing it. \citet{du2020sovereign} instead analyze a model in which risk averse lenders demand a risk premium for lending in the domestic currency, because the monetary authority would like to inflate away domestic currency debt during economic downturns. Thus, governments without the ability to commit to a low inflation target optimally issue foreign currency debt to avoid paying an inflation risk premium on domestic currency debt. 
 
@@ -435,15 +464,17 @@ Research on the origins and effects of currency and country risk has proliferate
 
 \newpage
 
+\setstretch{1}
+
 \bibliographystyle{chicago} \bibliography{ARE}
 
 \clearpage
 
+\setstretch{1.4}
 
 \input{appendix}
     
 
 \end{document}
-
 
 
